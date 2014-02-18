@@ -84,7 +84,7 @@
 		<!-- Comineza la ficha-->
 		<div ng-controller="fish" class="{{contcardshow}}">
 			<nav><button ng-click="hidecard()" style="float:none;">back</button></nav>
-			<div ng-repeat="name in data | filter:id">
+			<div ng-repeat="name in data | filter:id" class="img_name">
 				<img src="{{name.mainimage}}" class="main_image">
 				
 			
