@@ -177,7 +177,25 @@ body {
 .containercardhid {
 	display:none;
 }
+.backbutton {
+    background: #404040;
+    font-family: robotoregular, helvetica;
 
+	color: white;
+	border: 0px;
+	float: left;
+}
+.backimg {
+	height: 100%;
+	float: left;
+}
+.backtext {
+	margin-top: 5px;
+	float: left;
+}
+.img_name {
+	clear: both;
+}
 .main_image {
     border-radius: 20px;
 }
