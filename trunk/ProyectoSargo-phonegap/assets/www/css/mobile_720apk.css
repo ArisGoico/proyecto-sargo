@@ -5,8 +5,8 @@
 	width: 100%;
 }
 .title {
-	margin-top: 50px;
-	font-size: 50px;
+	margin-top: 40px;
+	font-size: 65px;
 }
 
 .subtitle {
@@ -21,17 +21,14 @@
 /*-----Estilos para el Índice-----*/
 body {
     font-size: 22px;
-
-
 }
 
 .containerindex {
 	width: 100%;
 	margin: 0 auto;
-
 }
 .top_menu {
-    width: 94%;
+    width: 96%;
 	height: 40px;
 	padding: 5px 20px 0px 0px;
 	position: fixed;
@@ -42,7 +39,7 @@ body {
 	font-size: 16px;
 }
 .topbutton:first-child {
-    margin-left: 20px;
+    margin-left: 5px;
 }
 .imglupa {
 	margin: 10px 0px 0px 0px;
