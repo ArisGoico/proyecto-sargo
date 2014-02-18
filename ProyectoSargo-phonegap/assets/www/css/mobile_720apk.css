@@ -112,7 +112,18 @@ body {
 .containercard {
     width: 100%;
 }
-
+.backbutton {
+	height: 40px;
+	font-size: 16px;
+}
+.backimg {
+	height: 100%;
+	float: left;
+}
+.backtext {
+	margin-top: 8px;
+	float: left;
+}
 .common_name {
     font-size: 20px;
 }
@@ -245,9 +256,19 @@ body {
 }
 
 /*-----Estilos para la ficha-----*/
-.img_name {
+.backbutton {
+	height: 30px;
+}
+.backimg {
+	height: 100%;
 	float: left;
+}
+.backtext {
+	margin-top: 3px;
+}
+.img_name {
 	width: 45%;
+	float: left;
 }
 .shortdesc {
 	width: 40%;
