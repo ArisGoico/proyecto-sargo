@@ -37,6 +37,7 @@ function global ($scope){
 			$scope.contindshow = "containerindexhid";
 			$scope.contcardshow = "containercard";
 			$scope.id = x;
+			window.scrollTo(0, 0);
 			return   /*$scope.contindshow, $scope.contcardshow;*/
 		};
 		$scope.hidecard = function () {
