@@ -120,7 +120,6 @@ body {
 /* Indice de contenidos*/
 .scroll {
 	width:680px;
-	height:1000px;
 	margin: 0px 20px;
 	overflow-x: hidden;
 	overflow-y: scroll;
