@@ -16,7 +16,7 @@
 	<!--CSS responsiva -->
 		<!--Global para PC-->
 		<link rel="stylesheet" type="text/css" media="screen and (min-width:1300px)" href="css/main_1000.css" /> 
-		<link rel="stylesheet" type="text/css" media="screen and (min-width:720px)" href="css/mobile_720apk.css" /> 
+		<link rel="stylesheet" type="text/css" media="screen and (min-width:721px)" href="css/mobile_720apk.css" /> 
 		<!--Móviles 1280x720-->
 		<link rel="stylesheet" type="text/css" media="screen and (device-width:360px)" href="css/mobile_720.css" />
 		<link rel="stylesheet" type="text/css" media="screen and (device-width:640px)" href="css/mobile_720.css" />
@@ -65,17 +65,18 @@
 		</header>
 		
 			<div class="scroll">
-				<div class="index_cont" ng-repeat="name in data | filter:type_filter_top | filter:{type: type_filter} | filter:{color: type_color} | filter:{color: type_food} | filter:{wayoflife: type_wayoflife} | filter: {habitat:type_habitad} | filter: {form:type_form} | orderBy:order:reverse">
-					<div class="index_cont" ng-click="hideindex(name.id)">
-						<div id="item" >
+				<div  ng-repeat="name in data | filter:type_filter_top | filter:{type: type_filter} | filter:{color: type_color} | filter:{color: type_food} | filter:{wayoflife: type_wayoflife} | filter: {habitat:type_habitad} | filter: {form:type_form} | orderBy:order:reverse">
+					<div  ng-click="hideindex(name.id)">
+						<div id="item" class="index_cont">
 							<img src="{{name.mini_img}}" class="mini_img">
 							<div class="names">
 								<div class="commonnamei">{{name.commonname}}</div>
 								<div class="scientific_namei"><I>{{name.scientificname}}</I></div>
 							</div>
-							<div class="line"><hr/></div>
+							
 						</div>
 					</div>
+					<div class="line"><hr/></div>
 				</div>
 			
 			</div>
