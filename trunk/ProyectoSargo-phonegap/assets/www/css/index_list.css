@@ -138,15 +138,15 @@ body {
 
 #item {
 	width: 100%;
-	height: 100px;
-	padding: 20px 0px 10px 0px;
 	float: none;
 }
-.line {
+.index_cont {
+}
+/*.line {
 	clear: both;
 	float: none;
 	margin: 100px 0px 0px 0px
-}
+}*/
 .mini_img {
     width: 80px;
 	height: 80px;
