@@ -1,30 +1,4 @@
-function initialize()
-{
-var x=new google.maps.LatLng(52.395715,4.888916);
-var stavanger=new google.maps.LatLng(58.983991,5.734863);
-var amsterdam=new google.maps.LatLng(52.395715,4.888916);
-var london=new google.maps.LatLng(51.508742,-0.120850);
-var mapProp = {
-  center:x,
-  zoom:4,
-  mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-var myTrip=[stavanger,amsterdam,london,stavanger];
-var flightPath=new google.maps.Polygon({
-  path:myTrip,
-  strokeColor:"#0000FF",
-  strokeOpacity:0.8,
-  strokeWeight:2,
-  fillColor:"#0000FF",
-  fillOpacity:0.4
-  });
-
-flightPath.setMap(map);
-
-}
+var map;
 var myApp = angular.module('myApp', []);
 
 function global ($scope){	
@@ -38,6 +12,7 @@ function global ($scope){
 			$scope.contcardshow = "containercard";
 			$scope.id = x;
 			window.scrollTo(0, 0);
+			initMap();
 			return   /*$scope.contindshow, $scope.contcardshow;*/
 		};
 		$scope.hidecard = function () {
@@ -71,6 +46,35 @@ function global ($scope){
 		};
 		
 		
+}
+
+function initMap () {
+	//Valores temporales de coordenadas
+	var x=new google.maps.LatLng(52.395715,4.888916);
+	var stavanger=new google.maps.LatLng(58.983991,5.734863);
+	var amsterdam=new google.maps.LatLng(52.395715,4.888916);
+	var london=new google.maps.LatLng(51.508742,-0.120850);
+	
+	if(!map) {
+		mapProp = {
+			center:x,
+			zoom:4,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+		map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+	}
+	
+	var myTrip=[stavanger,amsterdam,london,stavanger];
+	var flightPath=new google.maps.Polygon({
+		path:myTrip,
+		strokeColor:"#0000FF",
+		strokeOpacity:0.8,
+		strokeWeight:2,
+		fillColor:"#0000FF",
+		fillOpacity:0.4
+	});
+
+	flightPath.setMap(map);
 }
 
 /*function fish ($scope){
