@@ -3,11 +3,15 @@ var myApp = angular.module('myApp', []);
 
 
 function global ($scope){	
+		//inicialización de variables
 		$scope.contindshow = "containerindex";
 		$scope.contcardshow = "containercardhid";
 		$scope.advanced_search = "advanced_search_hid"
 		$scope.id = "";
 		$scope.order = "commonname";
+		$scope.imgGallery = "imgGallery_off";
+		
+		//Métodos
 		$scope.hideindex = function (x) {
 			$scope.contindshow = "containerindexhid";
 			$scope.contcardshow = "containercard";
@@ -21,6 +25,14 @@ function global ($scope){
 			$scope.contcardshow = "containercardhid";
 			/*return   $scope.contindshow,$scope.contcardshow;*/
 		};
+		
+		$scope.imgGalleryswitch_on = function () {
+			$scope.imgGallery = "imgGallery_on";
+		};
+		$scope.imgGalleryswitch_off = function () {
+			$scope.imgGallery = "imgGallery_off";
+		};
+		
 		$scope.showadsearch = function () {
 			$scope.advanced_search = "advanced_search"		
 			/*return   $scope.contindshow,$scope.contcardshow;*/
