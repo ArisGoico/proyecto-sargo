@@ -38,7 +38,9 @@
 	<script src="js/lib/angular.js"></script>
   	<script src="data/data.js"></script>
 	<script src="js/controller.js"></script>
+	<script src="js/db.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA6cJnxpv05XnN8mETINyBDcZJbEWXSzks&sensor=true"></script>
+	<script> window.addEventListener("DOMContentLoaded", init, false); </script>
 	
 	
 </head>
@@ -85,7 +87,7 @@
 		</div>
 		<!-- Fin del Indice-->
 	
-		<!-- Comineza la ficha-->
+		<!-- Comienza la ficha-->
 		<div ng-controller="fish" class="{{contcardshow}}">
 			<nav><button ng-click="hidecard()" class="backbutton"><img src="img/back.png" class="backimg"> <div class="backtext">Índice</div></button></nav>
 			<div ng-repeat="name in data | filter:id" class="img_name">
@@ -97,7 +99,7 @@
 				</div>
 				<div class="scientific_name">
 					<I>{{name.scientificname}}</I>
-				</div>
+				</div>				
 			</div>
 
 
@@ -126,6 +128,9 @@
 					<h1>Curiosidades</h1>
 					<div class="main_text_body">{{name.curiosidades}}</div>
 				</div>
+				<!-- Test de DB -->
+				<ul id="testElement"></ul>
+				<!-- Fin test de DB -->
 			</article>
 		</div>
 
