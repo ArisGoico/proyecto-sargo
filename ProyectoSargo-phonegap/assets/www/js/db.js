@@ -20,7 +20,7 @@ function addSlide() {
 
 //Esta funcion abre la DB y si no existe, la crea
 sargoDB.indexedDB.open = function() {
-  var version = 1;
+  var version = 2;
   var request = indexedDB.open("sargo", version);
 
   // We can only create Object stores in a versionchange transaction.
