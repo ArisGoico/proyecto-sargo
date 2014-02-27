@@ -98,16 +98,37 @@ body {
 .advanced_search {
 	border: 3px solid #878787;
 	background-color: #222222;
-	display: inline-block;
+	display: block;
+	position: fixed;
+	right: 0px;
+	z-index: 10;
+	background-image: url(../img/lupa_big.png);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	-webkit-animation-name: searchanimation;/*nombre de la animación*/
+	-webkit-animation-iteration-count:1;/*numero de veces que se repite la animación*/
+	-webkit-animation-timing-function:linear;/*es el tipo de animación, también puedes poner todas las de las CSS que usamos en transiciones.html*/
+	-webkit-animation-duration:0.5s;/*duración de la animacion*/
+	-webkit-animation-direction:normal;/*dirección de la animación. alternate cambia la direccion*/
+}
+
+@-webkit-keyframes searchanimation{
+	0%{right:-310px;}/*aquí se declara lo que va a pasar en cada momento de la animación*/
+	50%{right:-160px;}
+	100%{right:0px;}
+}
+.advanced_search_hid {
+	right: -310px;
+	border: 3px solid #878787;
+	background-color: #222222;
+	display: block;
 	position: fixed;
 	z-index: 10;
 	background-image: url(../img/lupa_big.png);
 	background-repeat: no-repeat;
 	background-position: bottom right;
-}
-.advanced_search_hid {
-	display: none;
-}
+	}
+	
 .close_search{
 	float: right; 
 	background-color: rgba(0,0,0,0);

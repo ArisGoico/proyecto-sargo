@@ -52,11 +52,8 @@ body {
 	width: 250px;
 	height: 270px;
 	border: 2px solid #878787;
-	margin: 40px 50px 0px 80px;
 	padding: 10px 0px 10px 20px;
 	background-color: #222222;
-	display: block;
-	position: fixed;
 	z-index: 10;
 	background-image: url(../img/lupa_big.png);
 	background-repeat: no-repeat;
@@ -222,7 +219,7 @@ body {
 }
 .advanced_search {
 	
-	margin: 5px 20px 0px 330px;
+	margin: 10px 0px 0px 0px;
 
 }
 /*.input_search{
