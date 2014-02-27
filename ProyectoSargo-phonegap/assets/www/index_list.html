@@ -103,7 +103,7 @@
 			</div>
 			
 			<!--Imagen a pantalla completa-->
-			<div ng-repeat="name in data | filter:id" class="{{imgGallery}}"> 
+			<div ng-click="imgGalleryswitch_off()" ng-repeat="name in data | filter:id" class="{{imgGallery}}"> 
 				<button ng-click="imgGalleryswitch_off()" class="closebutton"><img src="img/close.png" class="backimg"> </button>
 				<img src="{{name.mainimage}}" class="imgGallery">
 			</div>
