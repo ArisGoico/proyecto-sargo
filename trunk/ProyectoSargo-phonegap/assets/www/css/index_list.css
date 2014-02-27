@@ -113,12 +113,12 @@ body {
 }
 
 @-webkit-keyframes searchanimation{
-	0%{right:-310px;}/*aquí se declara lo que va a pasar en cada momento de la animación*/
+	0%{right:-335px;}/*aquí se declara lo que va a pasar en cada momento de la animación*/
 	50%{right:-160px;}
 	100%{right:0px;}
 }
 .advanced_search_hid {
-	right: -310px;
+	right: -335px;
 	border: 3px solid #878787;
 	background-color: #222222;
 	display: block;
