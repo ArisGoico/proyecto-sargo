@@ -1,6 +1,7 @@
 var map;
 var myApp = angular.module('myApp', []);
 
+
 function global ($scope){	
 		$scope.contindshow = "containerindex";
 		$scope.contcardshow = "containercardhid";
@@ -43,9 +44,7 @@ function global ($scope){
 			$scope.type_filter = "";
 			type_color = ' ';
 			return   $scope.type_filter;
-		};
-		
-		
+		};		
 }
 
 function initMap () {
