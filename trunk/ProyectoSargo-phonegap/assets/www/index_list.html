@@ -103,9 +103,9 @@
 			</div>
 			
 			<!--Imagen a pantalla completa-->
-			<div ng-click="imgGalleryswitch_off()" ng-repeat="name in data | filter:id" class="{{imgGallery}}"> 
-				<button ng-click="imgGalleryswitch_off()" class="closebutton"><img src="img/close.png" class="backimg"> </button>
-				<img src="{{name.mainimage}}" class="imgGallery">
+			<div ng-click="imgGalleryswitch_off()" ng-repeat="name in data | filter:id" class="{{imgGallery}}" > 
+				<button ng-click="imgGalleryswitch_off()" class="closebutton"><img src="img/close.png"> </button>
+				<span class="helper"></span><img src="{{name.mainimage}}" class="imgGallery">
 			</div>
 			<!--Fin de la imagen a pantalla completa-->
 
