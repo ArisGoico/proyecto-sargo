@@ -1,0 +1,33 @@
+Cosas pendientes a haver en la app de Sargo:
+	
+	Splash
+	- Sustituir la que viene por algo nuestro
+	
+	Portada
+	- Aumentar el margen inferior apra que deje un poco de espacio a los botones "Favoritos" y "Ecosistemas"
+	- Cambiar nombre? Logo? Fondos? Imágenes para los menús?
+	
+	Lista
+	- Boton de lupa con un área muy pequeña
+	- La lupa saca directamente la busqueda avanzada, lo cual no es muy usable. Además el jquery va un poco lento, debería ser una animación mas rápida.
+	- La búsqueda es dificil de borrar si quieres volver a ver la lista completa.
+	- Mucho espacio al final de la lista.
+	- Cuando se pulsa uno de los items o alguno de los botones interactivos, un área azul aparece durante un instante.
+	
+	Ficha
+	- En landscape, el marco blanco inclinado se sale de la pantalla.
+	- El mapa debería tener un poco más de margen a izquierda y derecha siempre, para evitar situaciones en las que el usuario se vea "atrapado" en el mapa.
+	- Cuando se pulsa uno de los items o alguno de los botones interactivos, un área azul aparece durante un instante.
+	- Mucho espacio al final de la ficha.
+	- FALTA EN FICHAS: No tenemos aun la geolocalización en las fichas ni algunos datos en alguna de ellas.
+	
+Sugerencias
+	
+	Aris:
+	1- He estado pensando y no necesitamos comunicarnos apenas para el tema de los favoritos. Con que exista una CSS con la imagen de la estrella vacia y otra CSS con ella llena, nos vale.
+		Tendré seguramente que dejar de fondo la vacía y superponer la llena añadiéndole la funcionalidad de borrar al link de la llena o algo así.
+		Necesitaría tambien, eso si, que el item HTML donde se ponga esa CSS o esa imagen tenga una ID única encontrable desde el código o con Angular, y ya del resto me ocupo yo.
+		Pasarte un array para que lo trates tu es una tonteria. Es delegar sin ninguna razón, asi que me lo tendré que comer yo.
+	2- El espacio tanto a final de ficha como de la lista se podría usar para publicidad, pero habría que hacer pruebas con algun tipo de popup de posicion relativa no?
+	3- Hay que darle más gracia al fondo. Yo tiraría por algo simple, azul con luz (quizá alguna foto tomada muy muy cerca de la superficie y en la que solo salga algo muy plano/uniforme
+		y podamos desenfocar con PS o algo asi). Algo que no llame la atención pero quede bonito de fondo.

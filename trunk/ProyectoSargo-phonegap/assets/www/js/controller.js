@@ -42,8 +42,6 @@ function global ($scope){
 			/*return   $scope.contindshow,$scope.contcardshow;*/
 		};
 		
-
-
 		$scope.showpeces = function () {
 			$scope.type_filter = "pez";
 			return   $scope.type_filter;
@@ -86,6 +84,7 @@ function initMap () {
 	});
 
 	flightPath.setMap(map);
+	map.setCenter(x);
 }
 
 /*function fish ($scope){

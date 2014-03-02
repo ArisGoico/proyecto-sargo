@@ -7,16 +7,13 @@ function init() {
 }
 
 //Para un posible botón o interaccion?
-/*
-function addSlide() {
-  var slide = document.getElementById('slide');		//Coger el valor del input en HTML que tenga de la id "slide"
-  var slide2 = document.getElementById('slide2'); 	//Coger el valor del input en HTML que tenga de la id "slide2"
+
+function addFavorite() {
+  var id = document.getElementById('id_input');		//Coger el valor del input en HTML que tenga de la id "id_input"
   
-  sargoDB.indexedDB.addSlide(slide.value, slide2.value);	//LLamar al método addSlide(content, id)
-  slide.value = ''; 	//resetear el valor
-  slide2.value = '';	//resetear el valor
+  sargoDB.indexedDB.addFav(id_input.value, );	//LLamar al método addFav(id)
 }
-*/
+
 
 //Esta funcion abre la DB y si no existe, la crea
 sargoDB.indexedDB.open = function() {
@@ -44,7 +41,7 @@ sargoDB.indexedDB.open = function() {
     sargoDB.indexedDB.db = e.target.result;
     sargoDB.indexedDB.getAllItems();
 	//añado un campo a pelo...
-	sargoDB.indexedDB.addSlide("id", "content");
+	sargoDB.indexedDB.addFav("id");
   };
 
   request.onerror = sargoDB.indexedDB.onerror;
@@ -64,20 +61,21 @@ sargoDB.indexedDB.getAllItems = function() {
   var keyRange = IDBKeyRange.lowerBound(0);
   var cursorRequest = store.openCursor(keyRange);
 
+  //Construir una estructura y entregarla al ... scope?
   cursorRequest.onsuccess = function(e) {
     var result = e.target.result;
     if(!!result == false)
       return;
 
-    renderSlide(result.value);
+    renderFav(result.value);
     result.continue();
   };
 
   cursorRequest.onerror = sargoDB.indexedDB.onerror;
 };
 
-//El metodo para renderizar...
-function renderSlide(row) {
+//El metodo para renderizar... Se puede entender "renderizar" como "construir visualizacion" en este contexto.
+function renderFav(row) {
   var slides = document.getElementById("testElement");
   var li = document.createElement("li");
   var a = document.createElement("a");
@@ -85,7 +83,7 @@ function renderSlide(row) {
   //t.data = row.text;
 
   a.addEventListener("click", function(e) {
-    sargoDB.indexedDB.deleteSlide(row.text);
+    sargoDB.indexedDB.deleteFav(row.text);
   });
 
   a.textContent = " [Delete]";
@@ -95,7 +93,7 @@ function renderSlide(row) {
 }
 
 //Para añadir datos a la db
-sargoDB.indexedDB.addSlide = function(id, content) {
+sargoDB.indexedDB.addFav = function(id) {
   var db = sargoDB.indexedDB.db;
   var trans = db.transaction(["sargo"], "readwrite");
   var store = trans.objectStore("sargo");
@@ -116,7 +114,7 @@ sargoDB.indexedDB.addSlide = function(id, content) {
 
 
 //Para borrar datos...
-sargoDB.indexedDB.deleteSlide = function(id) {
+sargoDB.indexedDB.deleteFav = function(id) {
   var db = sargoDB.indexedDB.db;
   var trans = db.transaction(["sargo"], "readwrite");
   var store = trans.objectStore("sargo");
