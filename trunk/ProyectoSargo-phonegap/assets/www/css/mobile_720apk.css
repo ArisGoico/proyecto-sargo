@@ -5,7 +5,7 @@
 	width: 100%;
 }
 .title {
-	margin-top: 40px;
+	margin-top: 25px;
 	font-size: 350%;
 }
 
@@ -104,7 +104,7 @@ body {
 	width:100%;
 	margin-top: 10px;
 }
-/*-----Estilos para la ficha-----*/
+/*-----Estilos para la FICHA-----*/
 .containercard {
     width: 100%;
 }
@@ -122,7 +122,7 @@ body {
 }
 .img_name {
 	background-color: white;
-	-webkit-transform: rotate(-10deg);
+	-webkit-transform: rotate(-5deg);
 	width: 70%;
 	margin: 20px auto;
 }
@@ -144,9 +144,9 @@ body {
 	font-size: 16px;
 }
 .map {
-    width: 90%;
+    width: 80%;
 	height: 400px;
-	margin: 20px;
+	margin: 5%;
 }
 
 .main_text {
