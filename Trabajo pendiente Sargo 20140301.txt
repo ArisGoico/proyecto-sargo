@@ -1,24 +1,24 @@
-Cosas pendientes a haver en la app de Sargo:
+﻿Cosas pendientes a haver en la app de Sargo:
 	
 	Splash
-	- Sustituir la que viene por algo nuestro
+	- Sustituir la que viene por algo nuestro - Aris
 	
 	Portada
-	- Aumentar el margen inferior apra que deje un poco de espacio a los botones "Favoritos" y "Ecosistemas"
+	- Aumentar el margen inferior apra que deje un poco de espacio a los botones "Favoritos" y "Ecosistemas" - Hecho
 	- Cambiar nombre? Logo? Fondos? Imágenes para los menús?
 	
 	Lista
 	- Boton de lupa con un área muy pequeña
 	- La lupa saca directamente la busqueda avanzada, lo cual no es muy usable. Además el jquery va un poco lento, debería ser una animación mas rápida.
-	- La búsqueda es dificil de borrar si quieres volver a ver la lista completa.
-	- Mucho espacio al final de la lista.
-	- Cuando se pulsa uno de los items o alguno de los botones interactivos, un área azul aparece durante un instante.
+	- La búsqueda es dificil de borrar si quieres volver a ver la lista completa. - Necesitamos ideas
+	- Mucho espacio al final de la lista. - HECHO
+	- Cuando se pulsa uno de los items o alguno de los botones interactivos, un área azul aparece durante un instante. Creo que resuelto pero no estoy seguro.
 	
 	Ficha
 	- En landscape, el marco blanco inclinado se sale de la pantalla.
 	- El mapa debería tener un poco más de margen a izquierda y derecha siempre, para evitar situaciones en las que el usuario se vea "atrapado" en el mapa.
 	- Cuando se pulsa uno de los items o alguno de los botones interactivos, un área azul aparece durante un instante.
-	- Mucho espacio al final de la ficha.
+	- Mucho espacio al final de la ficha. HECHO
 	- FALTA EN FICHAS: No tenemos aun la geolocalización en las fichas ni algunos datos en alguna de ellas.
 	
 Sugerencias
