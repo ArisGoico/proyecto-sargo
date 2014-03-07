@@ -28,7 +28,7 @@ body {
 	margin: 0 auto;
 }
 .top_menu {
-    width: 96%;
+    width: 100%;
 	height: 40px;
 	padding: 5px 20px 0px 0px;
 	position: fixed;
@@ -41,9 +41,15 @@ body {
 .topbutton:first-child {
     margin-left: 5px;
 }
+.search {
+	width: 40px;
+	height: 100%;
+
+}
 .imglupa {
-	margin: 10px 0px 0px 0px;
+	margin: 5px 0px 0px 0px;
 	width: 20px;
+	float: right;
 }
 .input_search_top {
 	display: none;
@@ -270,7 +276,7 @@ body {
 .img_name {
 	width: 40%;
 	background-color: white;
-	-webkit-transform: rotate(-15deg);
+	-webkit-transform: rotate(-5deg);
 	float: left;
 	margin: 20px;
 }
