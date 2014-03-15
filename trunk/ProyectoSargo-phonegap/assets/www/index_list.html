@@ -55,21 +55,24 @@
 												
 				<button class="topbutton" ng-click="showinvert()">Invertebrados</button>
 
-				<div class="search" ng-click="showadsearch()"> <span class="helper"></span> <img  class ="imglupa" src="img/lupa.png"></div>
+				<div class="search" ng-click="showsearch()"> <span class="helper"></span> <img  class ="imglupa" src="img/lupa.png"></div>
 				<div class="{{advanced_search}}">
-					<input  class="input_search"  ng-model="type_filter_top" placeholder="Escribe aquí el nombre">
-					<input  class="input_search"  ng-model="type_color" placeholder="Coloración"></br>
-					<input  class="input_search"  ng-model="type_form" placeholder="Mofología"></br> 	
-					<input  class="input_search"  ng-model="type_food" placeholder="Alimentación"></br> 
-					<input  class="input_search"  ng-model="type_wayoflife" placeholder="Modo de vida"></br> 
-					<input  class="input_search"  ng-model="type_habitad" placeholder="Habitad"></br> 	
-					<button class="close_search" style="float: right; background-color: rgba(0,0,0,0)" ng-click="hideadsearch()"> Cerrar </button>
+					<button class="close_search"  ng-click="hideadsearch()"> X </button>
+					<input  class="input_search"  ng-model="type_filter_top" placeholder="Palabra clave...">
+					<input  class="{{input_adsearch}}"  ng-model="type_color" placeholder="Escribe el color">
+					<input  class="{{input_adsearch}}"  ng-model="type_form" placeholder="¿Cuál es su forma?">	
+					<select class="{{select_adsearch}}" ng-model="type_family" ng-options="c.familia for c in data | orderBy:'familia'"><option value="">-- Elige Familia --</option></select>
+					<!--<input  class="{{input_adsearch}}"  ng-model="type_food" placeholder="Alimentación"> 
+					<input  class="{{input_adsearch}}"  ng-model="type_wayoflife" placeholder="Modo de vida"> 
+					<input  class="{{input_adsearch}}"  ng-model="type_family" placeholder="Habitad"> 	-->
+					<button class="{{btn_adsearch}}"  ng-click="showAdsearch()"> {{switch_adsearch}} </button>
+					
 				</div>
 			</nav>
 		</header>
 		
 			<div class="scroll">
-				<div  ng-repeat="name in data | filter:type_filter_top | filter:{type: type_filter} | filter:{color: type_color} | filter:{color: type_food} | filter:{wayoflife: type_wayoflife} | filter: {habitat:type_habitad} | filter: {form:type_form} | orderBy:order:reverse">
+				<div  ng-repeat="name in data | filter:type_filter_top | filter:{type: type_filter} | filter:{color: type_color} | filter:{familia: type_family.familia} | filter:{wayoflife: type_wayoflife} | filter: {form:type_form} | orderBy:order:reverse">
 					<div  ng-click="hideindex(name.id)">
 						<div id="item" class="index_cont">
 							<img src="{{name.mini_img}}" class="mini_img">

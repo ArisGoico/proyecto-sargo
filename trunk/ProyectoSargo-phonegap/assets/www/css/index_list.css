@@ -93,6 +93,13 @@ body {
 	background-image:url(../img/line.png);
 	repeat: no-repeat;
 }
+.select_adsearch{
+	color: rgb(169, 169, 169);
+	border: 0px;
+	background-color: rgba(0,0,0,0); 
+	background-image:url(../img/line.png);
+	repeat: no-repeat;
+}
 .input_search_top{
 	color: white;
 	border: 0px;
@@ -113,7 +120,7 @@ body {
 	-webkit-animation-name: searchanimation;/*nombre de la animación*/
 	-webkit-animation-iteration-count:1;/*numero de veces que se repite la animación*/
 	-webkit-animation-timing-function:linear;/*es el tipo de animación, también puedes poner todas las de las CSS que usamos en transiciones.html*/
-	-webkit-animation-duration:0.5s;/*duración de la animacion*/
+	-webkit-animation-duration:0.25s;/*duración de la animacion*/
 	-webkit-animation-direction:normal;/*dirección de la animación. alternate cambia la direccion*/
 }
 
@@ -122,6 +129,7 @@ body {
 	50%{right:-160px;}
 	100%{right:0px;}
 }
+
 .advanced_search_hid {
 	right: -335px;
 	border: 3px solid #878787;
@@ -133,6 +141,9 @@ body {
 	background-repeat: no-repeat;
 	background-position: bottom right;
 	}
+.adsearch_hid {
+	display: none;
+}
 	
 .close_search{
 	float: right; 
@@ -142,6 +153,17 @@ body {
 	color: white;
 	border: 0px;
 }
+.btn_adsearch{
+	float: left; 
+	width: 80%;
+	background-color: rgba(0,0,0,0);
+    font-family: robotoregular, helvetica;
+	font-size: 12px;
+	color: white;
+	border: 0px;
+	text-align: left;
+}
+
 
 /* Indice de contenidos*/
 .scroll {
