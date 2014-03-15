@@ -10,6 +10,10 @@ function global ($scope){
 		$scope.id = "";
 		$scope.order = "commonname";
 		$scope.imgGallery = "imgGallery_off";
+		$scope.input_adsearch = "adsearch_hid";
+		$scope.btn_adsearch = "btn_adsearch";
+		$scope.switch_adsearch = "Más...";
+		$scope.select_adsearch = "adsearch_hid";
 		
 		//Métodos
 		$scope.hideindex = function (x) {
@@ -33,13 +37,27 @@ function global ($scope){
 			$scope.imgGallery = "imgGallery_off";
 		};
 		
-		$scope.showadsearch = function () {
+		$scope.showsearch = function () {
 			$scope.advanced_search = "advanced_search"		
-			/*return   $scope.contindshow,$scope.contcardshow;*/
 		};
 		$scope.hideadsearch = function () {
-			$scope.advanced_search = "advanced_search_hid"		
-			/*return   $scope.contindshow,$scope.contcardshow;*/
+			$scope.advanced_search = "advanced_search_hid"	
+			$scope.input_adsearch = "adsearch_hid";		
+			$scope.select_adsearch = "adsearch_hid";
+			$scope.switch_adsearch = "Más...";			
+		};
+		$scope.showAdsearch = function () {
+			if ($scope.switch_adsearch == "Más...") {
+				$scope.input_adsearch = "input_search";
+				$scope.select_adsearch = "select_adsearch";
+				$scope.switch_adsearch = "Menos...";
+			}
+			else {
+				$scope.input_adsearch = "adsearch_hid";
+				$scope.select_adsearch = "adsearch_hid";
+				$scope.btn_adsearch = "btn_adsearch";
+				$scope.switch_adsearch = "Más...";
+			};
 		};
 		
 		$scope.showpeces = function () {

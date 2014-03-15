@@ -56,7 +56,7 @@ body {
 }
 .advanced_search {
 	width: 250px;
-	height: 270px;
+	/*height: 70px;*/
 	border: 2px solid #878787;
 	padding: 10px 0px 10px 20px;
 	background-color: #222222;
@@ -65,11 +65,11 @@ body {
 	background-repeat: no-repeat;
 	background-position: bottom right;
 }
+
 .input_search{
 	width: 150px;
 	height: 20px;
 	font-size: 14px;
-	color: white;
 	border: 0px;
 	margin: 10px 0px;
 	background-color: rgba(0,0,0,0); 
@@ -77,6 +77,17 @@ body {
 	background-repeat: no-repeat;
 	background-position: bottom right;
 	}
+.select_adsearch{
+	width: 150px;
+	height: 20px;
+	font-size: 14px;
+	border: 0px;
+	margin: 10px 0px;
+	background-color: rgba(0,0,0,0); 
+	background-image:url(../img/line_400.png);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+}
 .close_search{
 	float: right; 
 	background-color: rgba(0,0,0,0);
@@ -84,6 +95,17 @@ body {
 	font-size: 14px;
 	color: white;
 	border: 0px;
+	margin-top: -6px;
+}
+.btn_adsearch{
+	float: left; 
+	background-color: rgba(0,0,0,0);
+    font-family: robotoregular, helvetica;
+	font-size: 14px;
+	color: white;
+	border: 0px;
+	margin: 0;
+	padding: 0;
 }
 .scroll {
 	width: 90%;
