@@ -14,12 +14,13 @@
 	<script src="js/lib/angular.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA6cJnxpv05XnN8mETINyBDcZJbEWXSzks&sensor=true"></script>
   	<script src="data/001_controller.js"></script>
+	<script src="js/controller.js"></script>
 	<script> google.maps.event.addDomListener(window, 'load', initialize); </script>
 	
 </head>
 
-<body ng-controller="fish">
-	<div class="containercard">
+<body ng-controller="global">
+	<div ng-controller="fish" class="containercard">
 		<header >
 			<img src="{{mainimage}}" class="main_image">
 		
@@ -29,6 +30,7 @@
 			<div class="scientific_name">
 				<I>{{scientificname}}</I>
 			</div>
+			<button  class="topbutton" ng-click="trygetcookie()">Get</button>
 
 		</header>
 			
