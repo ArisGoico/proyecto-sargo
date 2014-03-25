@@ -15,7 +15,31 @@ function global ($scope){
 		$scope.switch_adsearch = "Más...";
 		$scope.select_adsearch = "adsearch_hid";
 		
+		//Set y Get cookie
+		function setCookie(cname,cvalue)
+			{
+			window.localStorage.setItem(cname, cvalue);
+			
+			};
+
+		function getCookie(cname)
+			{
+			return window.localStorage.getItem(cname);;
+			};
 		//Métodos
+		$scope.trysetcookie = function (x) {
+			var id = x;
+			setCookie("currentfish", id);
+		}
+		$scope.trygetcookie = function () {
+			var prueba = getCookie("currentfish");
+			alert (prueba);
+		}
+		$scope.pruebacookie = function () {
+			var t = getCookie("currentfish");
+			$scope.id = t;
+		};
+		$scope.pruebacookie();
 		$scope.hideindex = function (x) {
 			$scope.contindshow = "containerindexhid";
 			$scope.contcardshow = "containercard";
@@ -70,12 +94,13 @@ function global ($scope){
 		};
 		$scope.showall = function () {
 			$scope.type_filter = "";
-			type_color = ' ';
 			return   $scope.type_filter;
-		};		
+		};	
+
+		
 }
 
-function initMap () {
+/*function initMap () {
 	//Valores temporales de coordenadas
 	var x=new google.maps.LatLng(52.395715,4.888916);
 	var stavanger=new google.maps.LatLng(58.983991,5.734863);
@@ -103,7 +128,7 @@ function initMap () {
 
 	flightPath.setMap(map);
 	map.setCenter(x);
-}
+}*/
 
 /*function fish ($scope){
 

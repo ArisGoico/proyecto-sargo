@@ -4,6 +4,7 @@ function fish ($scope){
   {
 	"id": "0001",   
 	"mainimage": "img/main/001.jpg",
+	"secondimage": "img/main/002.jpg",
 	"mini_img" : "img/mini/001.jpg",
 	"commonname" : "Sargo común",
     "scientificname" : "Diplodus sargus",
@@ -772,5 +773,22 @@ function fish ($scope){
   },*/
   
   ];
-
+		$scope.arrayContainsFam = function (array, x) {
+			
+			for (var i=0; i<array.length; i++) {
+				if ( x == array[i].familia) {
+					return true;
+				};
+			};
+		};
+		
+		$scope.familyDrop = [];
+		$scope.createFamArray = function () {
+			for (var i=0; i<$scope.data.length; i++) {
+				if ( !$scope.arrayContainsFam ($scope.familyDrop, $scope.data[i].familia)) {
+					$scope.familyDrop.push ($scope.data[i]);
+				};
+			}
+		};
+		$scope.createFamArray ();
 }

@@ -48,6 +48,14 @@ body {
 	text-decoration: none;
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
+body a {
+	text-decoration: none;
+}
+:focus {
+outline: 0;
+border:none;
+color: rgba(0, 0, 0, 0);
+}
 
 /*-----Estilos para el índice-----*/
 
@@ -202,7 +210,7 @@ body {
     text-align: left;
 	float: left;
 }
-.common_namei {
+.commonnamei {
     color: white;
 }
 .scientific_namei {
