@@ -61,6 +61,9 @@ outline: 0;
 border:none;
 color: rgba(0, 0, 0, 0);
 }
+.nonDraggableImage{
+    -webkit-user-drag: none;
+}
 
 /*-----Estilos para el índice-----*/
 

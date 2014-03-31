@@ -1,8 +1,5 @@
-var map;
-var myApp = angular.module('myApp', []);
-
-
-function global ($scope){	
+angular.module('sargo', [])
+	.controller('global', function ($scope){	
 		//inicialización de variables
 
 		$scope.advanced_search = "advanced_search_hid"
@@ -13,6 +10,7 @@ function global ($scope){
 		$scope.btn_adsearch = "btn_adsearch";
 		$scope.switch_adsearch = "Más...";
 		$scope.select_adsearch = "adsearch_hid";
+		$scope.type = {};
 		
 		//Set y Get cookie
 		function setCookie(cname,cvalue)
@@ -26,21 +24,46 @@ function global ($scope){
 			return window.localStorage.getItem(cname);;
 			};
 		//Métodos
-		$scope.trysetcookie = function (x) {
+		$scope.trysetcookie = function (x, filtro, color, forma, familia) {
 			var id = x;
-			setCookie("currentfish", id);
+			setCookie("currentfish", x);
+			setCookie("filtro", filtro);
+			setCookie("color", color);
+			setCookie("forma", forma);
+			setCookie("familia", familia);
 		}
 		$scope.trygetcookie = function () {
 			var prueba = getCookie("currentfish");
 			alert (prueba);
 		}
+		// Recupera desde cookies el ID del animal seleccionado (ficha) y recupera de cookies los filtros hechos por el ususario.
 		$scope.pruebacookie = function () {
 			var t = getCookie("currentfish");
 			$scope.id = t;
+			// Si no se recupera comparandolo con undefined, te la marca como undefined y los fltros no funcionan
+			if ( getCookie("filtro") != "undefined"){
+				$scope.type.filter_top = getCookie("filtro");
+			}
+			else {
+				$scope.type.filter_top = "";
+			};
+			if ( getCookie("color") != "undefined"){
+				$scope.type.color = getCookie("color");
+			}
+			else {
+				$scope.type.color = "";
+			};
+			if ( getCookie("forma") != "undefined"){
+				$scope.type.form = getCookie("forma");
+			}
+			else {
+				$scope.type.form = "";
+			};
+
+			$scope.type.family = getCookie("familia");
 		};
 		
 		$scope.pruebacookie();
-
 		
 		$scope.imgGalleryswitch_on = function () {
 			$scope.imgGallery = "imgGallery_on";
@@ -73,20 +96,21 @@ function global ($scope){
 		};
 		
 		$scope.showpeces = function () {
-			$scope.type_filter = "pez";
-			return   $scope.type_filter;
+			$scope.type.filter = "pez";
+			return   $scope.type.filter;
 		};
 		$scope.showinvert = function () {
-			$scope.type_filter = "invertebrado";
-			return   $scope.type_filter;
+			$scope.type.filter = "invertebrado";
+			return   $scope.type.filter;
 		};
 		$scope.showall = function () {
-			$scope.type_filter = "";
-			return   $scope.type_filter;
+			$scope.type = {};
+			$scope.trysetcookie("", "", "", "", "");
+
 		};	
 
 		
-}
+});
 
 /*function initMap () {
 	//Valores temporales de coordenadas
