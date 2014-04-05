@@ -79,13 +79,14 @@
 							<div id="item" class="index_cont" >
 								<img src="{{name.mini_img}}" class="mini_img nonDraggableImage" ng-swipe-right="showinvert()">
 								<div class="names">
-									<div class="commonnamei">{{name.commonname}}</div>
+									<div class="commonnamei" id="id_input">{{name.commonname}}</div>
 									<div class="scientific_namei"><I>{{name.scientificname}}</I></div>
 								</div>
 								
 							</div>
 						</div>
 					</a>
+					<input type="submit" id="fav_icon" value="Fav" onclick="addFavorite(); return false;">
 					<div class="line"><hr/></div>
 				</div>
 			
