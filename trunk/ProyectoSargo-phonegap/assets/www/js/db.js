@@ -11,9 +11,8 @@ function init() {
 function addFavorite() {
   var id = document.getElementById('id_input');		//Coger el valor del input en HTML que tenga de la id "id_input"
   
-  sargoDB.indexedDB.addFav(id_input.value, );	//LLamar al método addFav(id)
+  sargoDB.indexedDB.addFav(id.innerHTML);	//LLamar al método addFav(id)
 }
-
 
 //Esta funcion abre la DB y si no existe, la crea
 sargoDB.indexedDB.open = function() {
@@ -41,7 +40,7 @@ sargoDB.indexedDB.open = function() {
     sargoDB.indexedDB.db = e.target.result;
     sargoDB.indexedDB.getAllItems();
 	//añado un campo a pelo...
-	sargoDB.indexedDB.addFav("id");
+	//sargoDB.indexedDB.addFav("id");
   };
 
   request.onerror = sargoDB.indexedDB.onerror;
@@ -50,8 +49,7 @@ sargoDB.indexedDB.open = function() {
 
 //Esto lo recolecta todo y lo renderiza (solo para el ejemplo)
 sargoDB.indexedDB.getAllItems = function() {
-  var slides = document.getElementById("testElement");
-  slides.innerHTML = "";
+  var slides = document.getElementById("fav_icon");
 
   var db = sargoDB.indexedDB.db;
   var trans = db.transaction(["sargo"], "readwrite");
@@ -76,7 +74,7 @@ sargoDB.indexedDB.getAllItems = function() {
 
 //El metodo para renderizar... Se puede entender "renderizar" como "construir visualizacion" en este contexto.
 function renderFav(row) {
-  var slides = document.getElementById("testElement");
+  var slides = document.getElementById("fav_icon");
   var li = document.createElement("li");
   var a = document.createElement("a");
   var t = document.createTextNode(row.text);
@@ -97,9 +95,9 @@ sargoDB.indexedDB.addFav = function(id) {
   var db = sargoDB.indexedDB.db;
   var trans = db.transaction(["sargo"], "readwrite");
   var store = trans.objectStore("sargo");
+  alert(id);
   var request = store.put({
-    "id" : id,
-    "text": content
+    "id" : id
   });
 
   request.onsuccess = function(e) {
@@ -130,3 +128,4 @@ sargoDB.indexedDB.deleteFav = function(id) {
   };
 };
 
+window.addEventListener("DOMContentLoaded", init, false);
