@@ -2,6 +2,7 @@
 	
 	Splash
 	- Sustituir la que viene por algo nuestro - Aris --> http://docs.phonegap.com/en/2.2.0/cordova_splashscreen_splashscreen.md.html
+													 --> Parece que no estamos usando phonegap para nada...... eso implica que se puede usar esto: http://stackoverflow.com/questions/8642730/splash-screen-in-android-application
 	
 	Portada
 	- Aumentar el margen inferior apra que deje un poco de espacio a los botones "Favoritos" y "Ecosistemas" - HECHO.
