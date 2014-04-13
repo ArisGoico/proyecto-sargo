@@ -229,7 +229,7 @@ color: rgba(0, 0, 0, 0);
 	text-align: left;
 	padding:15px 20px;
 }
-#fav_icon_active {
+.fav_icon_active {
 	float: right;
 	margin-top: 30px;
 	margin-right: 40px;
@@ -238,7 +238,7 @@ color: rgba(0, 0, 0, 0);
 	background-image:url("../img/ico_star.png");
 	background-size: cover;
 }
-#fav_icon_inactive {
+.fav_icon_inactive {
 	float: right;
 	margin-top: 30px;
 	margin-right: 40px;

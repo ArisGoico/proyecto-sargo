@@ -115,133 +115,116 @@ angular.module('sargo', [])
 		sargoDB.indexedDB.db = null;
 
 		function init() {
-		  sargoDB.indexedDB.open(); // open displays the data previously saved
+			sargoDB.indexedDB.open(); // open displays the data previously saved
 		}
 
 		$scope.addFavorite = function(id) {
-		  //var id = document.getElementById('id_input');		//Coger el valor del input en HTML que tenga de la id "id_input"
-		  
-		  sargoDB.indexedDB.addFav(id);	//LLamar al método addFav(id)
+			//var id = document.getElementById('id_input');		//Coger el valor del input en HTML que tenga de la id "id_input"
+
+			sargoDB.indexedDB.addFav(id);	//LLamar al método addFav(id)
 		}
 
 		//Esta funcion abre la DB y si no existe, la crea
 		sargoDB.indexedDB.open = function() {
-		  var version = 3;
-		  var request = indexedDB.open("sargo", version);
+			var version = 5;
+			var request = indexedDB.open("sargo", version);
 
-		  // We can only create Object stores in a versionchange transaction.
-		  request.onupgradeneeded = function(e) {
-			var db = e.target.result;
+			// We can only create Object stores in a versionchange transaction.
+			request.onupgradeneeded = function(e) {
+				var db = e.target.result;
 
-			// A versionchange transaction is started automatically.
-			e.target.transaction.onerror = sargoDB.indexedDB.onerror;
+				// A versionchange transaction is started automatically.
+				e.target.transaction.onerror = sargoDB.indexedDB.onerror;
 
-			if(db.objectStoreNames.contains("sargo")) {
-			  db.deleteObjectStore("sargo");
-			}
+				if(db.objectStoreNames.contains("sargo")) {
+					db.deleteObjectStore("sargo");
+				}
 
-			//keyPath son los atributos que tienen que existir por huevos, las keys de la BBDD
-			var store = db.createObjectStore("sargo",
-			  {keyPath: "id"});
-		  };
+				//keyPath son los atributos que tienen que existir por huevos, las keys de la BBDD
+				var store = db.createObjectStore("sargo",
+				  {keyPath: "id"});
+			};
 
-		  //Se requiere acceder siempre con un .onsuccess porque todo es asincrono
-		  request.onsuccess = function(e) {
-			sargoDB.indexedDB.db = e.target.result;
-			sargoDB.indexedDB.getAllItems();
-		  };
+			//Se requiere acceder siempre con un .onsuccess porque todo es asincrono
+			request.onsuccess = function(e) {
+				sargoDB.indexedDB.db = e.target.result;
+				sargoDB.indexedDB.getAllItems();
+			};
 
-		  request.onerror = sargoDB.indexedDB.onerror;
+			request.onerror = sargoDB.indexedDB.onerror;
 		};
 		
 		//Para añadir datos a la db
 		sargoDB.indexedDB.addFav = function(id) {
-		  var db = sargoDB.indexedDB.db;
-		  var trans = db.transaction(["sargo"], "readwrite");
-		  var store = trans.objectStore("sargo");
-		  //alert(id);
-		  var request = store.put({
-			"id" : id
-		  });
+			var db = sargoDB.indexedDB.db;
+			var trans = db.transaction(["sargo"], "readwrite");
+			var store = trans.objectStore("sargo");
+			//alert(id);
+			var request = store.put({
+				"id" : id
+			});
 
-		  request.onsuccess = function(e) {
-			// Re-render all the items
-			sargoDB.indexedDB.getAllItems();
-		  };
+			request.onsuccess = function(e) {
+				// Re-render all the items
+				sargoDB.indexedDB.getAllItems();
+			};
 
-		  request.onerror = function(e) {
-			console.log(e.value);
-		  };
+			request.onerror = function(e) {
+				console.log(e.value);
+			};
 		};
 
 		//Esto lo recolecta todo y lo renderiza (solo para el ejemplo)
 		sargoDB.indexedDB.getAllItems = function() {
-		  //var slides = document.getElementById("fav_icon");
+			var db = sargoDB.indexedDB.db;
+			var trans = db.transaction(["sargo"], "readwrite");
+			var store = trans.objectStore("sargo");
 
-		  var db = sargoDB.indexedDB.db;
-		  var trans = db.transaction(["sargo"], "readwrite");
-		  var store = trans.objectStore("sargo");
+			// Get everything in the store;
+			var keyRange = IDBKeyRange.lowerBound(0);
+			var cursorRequest = store.openCursor(keyRange);
 
-		  // Get everything in the store;
-		  var keyRange = IDBKeyRange.lowerBound(0);
-		  var cursorRequest = store.openCursor(keyRange);
+			//Construir una estructura y entregarla al ... scope?
+			cursorRequest.onsuccess = function(e) {
+				var result = e.target.result;
+				if(!!result == false)
+				  return;
+				renderFav(result.value.id);
+				result.continue();
+			};
 
-		  //Construir una estructura y entregarla al ... scope?
-		  cursorRequest.onsuccess = function(e) {
-			var result = e.target.result;
-			if(!!result == false)
-			  return;
-
-			renderFav(result.value);
-			result.continue();
-		  };
-
-		  cursorRequest.onerror = sargoDB.indexedDB.onerror;
+			cursorRequest.onerror = sargoDB.indexedDB.onerror;
 		};
 		
+		var listener;
+		
 		function renderFav(id) {
-		  var fav_icon = document.getElementById(id.text);
-		  fav_icon.addEventListener("click", function(e) {
-			sargoDB.indexedDB.deleteFav(id.text);
-		  });
-		  fav_icon.id = "fav_icon_active";
-		}
-
-		//El metodo para renderizar... Se puede entender "renderizar" como "construir visualizacion" en este contexto.
-		function renderFav_old(row) {
-		  var slides = document.getElementById("fav_icon");
-		  var li = document.createElement("li");
-		  var a = document.createElement("a");
-		  var t = document.createTextNode(row.text);
-		  //t.data = row.text;
-
-		  a.addEventListener("click", function(e) {
-			sargoDB.indexedDB.deleteFav(row.text);
-		  });
-
-		  a.textContent = " [Delete]";
-		  li.appendChild(t);
-		  li.appendChild(a);
-		  slides.appendChild(li);
+			var fav_icon = document.getElementById(id);
+			listener = function(e) {
+				sargoDB.indexedDB.deleteFav(id);
+			};
+			fav_icon.addEventListener("click", listener);
+			fav_icon.className = "fav_icon_active";
 		}
 
 		//Para borrar datos...
 		sargoDB.indexedDB.deleteFav = function(id) {
-		  var db = sargoDB.indexedDB.db;
-		  var trans = db.transaction(["sargo"], "readwrite");
-		  var store = trans.objectStore("sargo");
+			var db = sargoDB.indexedDB.db;
+			var trans = db.transaction(["sargo"], "readwrite");
+			var store = trans.objectStore("sargo");
 
-		  var request = store.delete(id);
+			var request = store.delete(id);
 
-		  request.onsuccess = function(e) {
-			var fav_icon = document.getElementById(id.text);
-			fav_icon.id = "fav_icon_inactive";
-			sargoDB.indexedDB.getAllItems();  // Refresh the screen
-		  };
+			request.onsuccess = function(e) {
+				var fav_icon = document.getElementById(id);
+				fav_icon.removeEventListener("click", listener);
+				fav_icon.className = "fav_icon_inactive";
+				sargoDB.indexedDB.getAllItems();  // Refresh the screen
+			};
 
-		  request.onerror = function(e) {
-			console.log(e);
-		  };
+			request.onerror = function(e) {
+				console.log(e);
+			};
 		};
 
 		window.addEventListener("DOMContentLoaded", init, false);
