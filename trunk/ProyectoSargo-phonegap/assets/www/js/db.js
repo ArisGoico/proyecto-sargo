@@ -14,6 +14,12 @@ function addFavorite() {
   sargoDB.indexedDB.addFav(id.innerHTML);	//LLamar al método addFav(id)
 }
 
+function addFavorite2(id2) {
+  //var id = document.getElementById('id_input');		//Coger el valor del input en HTML que tenga de la id "id_input"
+  
+  sargoDB.indexedDB.addFav(id2);	//LLamar al método addFav(id)
+}
+
 //Esta funcion abre la DB y si no existe, la crea
 sargoDB.indexedDB.open = function() {
   var version = 2;

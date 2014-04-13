@@ -38,7 +38,6 @@
 	<script src="js/lib/angular.js"></script>
   	<script src="data/data.js"></script>
 	<script src="js/controller.js"></script>
-	<script src="js/db.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA6cJnxpv05XnN8mETINyBDcZJbEWXSzks&sensor=true"></script>
 	<!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
 	
@@ -86,7 +85,7 @@
 							</div>
 						</div>
 					</a>
-					<input type="submit" id="fav_icon" value="Fav" onclick="addFavorite(); return false;">
+					<a id="fav_icon" ng-click="addFavorite(name.id)">Fav</a>
 					<div class="line"><hr/></div>
 				</div>
 			
