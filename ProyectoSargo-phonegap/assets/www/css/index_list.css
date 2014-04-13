@@ -229,6 +229,15 @@ color: rgba(0, 0, 0, 0);
 	text-align: left;
 	padding:15px 20px;
 }
+.fav_off{
+	float: right;
+	margin-top: 40px;
+	margin-right: 40px;
+	width: 50px;
+	height: 50px;
+	background-image:url("../img/ico_star.png");
+	background-size: cover;
+}
 
 /*-----Estilos para la ficha-----*/
 
