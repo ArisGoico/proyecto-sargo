@@ -11,6 +11,7 @@ angular.module('sargo', [])
 		$scope.switch_adsearch = "Más...";
 		$scope.select_adsearch = "adsearch_hid";
 		$scope.type = {};
+		$scope.favArray = [];
 		
 		//Set y Get cookie
 		function setCookie(cname,cvalue)
@@ -107,7 +108,7 @@ angular.module('sargo', [])
 			$scope.type = {};
 			$scope.trysetcookie("", "", "", "", "");
 
-		};	
+		};
 
 		//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		var sargoDB = {};
@@ -173,7 +174,7 @@ angular.module('sargo', [])
 				console.log(e.value);
 			};
 		};
-
+		
 		//Esto lo recolecta todo y lo renderiza (solo para el ejemplo)
 		sargoDB.indexedDB.getAllItems = function() {
 			var db = sargoDB.indexedDB.db;
@@ -182,13 +183,16 @@ angular.module('sargo', [])
 
 			// Get everything in the store;
 			var keyRange = IDBKeyRange.lowerBound(0);
+			$scope.favArray = [];
 			var cursorRequest = store.openCursor(keyRange);
-
+			
 			//Construir una estructura y entregarla al ... scope?
 			cursorRequest.onsuccess = function(e) {
 				var result = e.target.result;
 				if(!!result == false)
 				  return;
+				alert($scope.data[result.value.id - 1]);
+				$scope.favArray.push($scope.data[result.value.id - 1]);
 				renderFav(result.value.id);
 				result.continue();
 			};
