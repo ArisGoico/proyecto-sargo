@@ -191,8 +191,8 @@ angular.module('sargo', [])
 				var result = e.target.result;
 				if(!!result == false)
 				  return;
-				alert($scope.data[result.value.id - 1]);
-				$scope.favArray.push($scope.data[result.value.id - 1]);
+				//alert($scope.data[parseInt(result.value.id) - 1]);
+				//$scope.favArray.push($scope.data[parseInt(result.value.id) - 1]);
 				renderFav(result.value.id);
 				result.continue();
 			};
