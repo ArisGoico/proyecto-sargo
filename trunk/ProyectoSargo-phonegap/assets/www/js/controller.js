@@ -114,6 +114,13 @@ angular.module('sargo', [])
 		var sargoDB = {};
 		sargoDB.indexedDB = {};
 		sargoDB.indexedDB.db = null;
+		
+		//Codigo para leer el JSON
+		/*
+		var json_data = $.getJSON( "data/data.json", function() {
+			alert( "success: " + json_data.data[0].id);
+		})
+		*/
 
 		function init() {
 			sargoDB.indexedDB.open(); // open displays the data previously saved
