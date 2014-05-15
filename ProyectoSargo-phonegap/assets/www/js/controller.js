@@ -12,6 +12,7 @@ angular.module('sargo', [])
 		$scope.select_adsearch = "adsearch_hid";
 		$scope.type = {};
 		$scope.favArray = [];
+		$scope.json_data = [];
 		
 		//Set y Get cookie
 		function setCookie(cname,cvalue)
@@ -117,22 +118,16 @@ angular.module('sargo', [])
 		
 		//Codigo para leer el JSON
 		
-		$scope.json_data = [];
+		
 		$.ajax({
 			url: "data/data.json",
 			crossDomain: true,
-			dataType: "json",
+			dataType: "text",
 			success: function(data) {
 				$scope.json_data = jQuery.parseJSON(data);
-				alert( "success: " + json_data.data[0].id);
+				alert( "success: " + $scope.json_data.data[0].id);
 			}
-		});
-		/*
-		$.getJSON( "data/data.json&callback=?", function(data) {
-			$scope.json_data = jQuery.parseJSON(data);
-			alert( "success: " + json_data.data[0].id);
-		})*/
-		
+		});		
 
 		function init() {
 			sargoDB.indexedDB.open(); // open displays the data previously saved
