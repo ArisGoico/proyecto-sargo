@@ -116,11 +116,23 @@ angular.module('sargo', [])
 		sargoDB.indexedDB.db = null;
 		
 		//Codigo para leer el JSON
+		
+		$scope.json_data = [];
+		$.ajax({
+			url: "data/data.json",
+			crossDomain: true,
+			dataType: "json",
+			success: function(data) {
+				$scope.json_data = jQuery.parseJSON(data);
+				alert( "success: " + json_data.data[0].id);
+			}
+		});
 		/*
-		var json_data = $.getJSON( "data/data.json", function() {
+		$.getJSON( "data/data.json&callback=?", function(data) {
+			$scope.json_data = jQuery.parseJSON(data);
 			alert( "success: " + json_data.data[0].id);
-		})
-		*/
+		})*/
+		
 
 		function init() {
 			sargoDB.indexedDB.open(); // open displays the data previously saved
