@@ -125,7 +125,7 @@ angular.module('sargo', [])
 			dataType: "text",
 			success: function(data) {
 				$scope.json_data = jQuery.parseJSON(data);
-				alert( "success: " + $scope.json_data.data[0].id);
+				//alert( "success: " + $scope.json_data.data[0].id);
 			}
 		});		
 
@@ -189,7 +189,7 @@ angular.module('sargo', [])
 			};
 		};
 		
-		//Esto lo recolecta todo y lo renderiza (solo para el ejemplo)
+		//Esto lo recolecta todo y refresca el array de favArray y los favoritos en pantalla (hay que llamar a este método cada vez que se cambie de contexto)
 		sargoDB.indexedDB.getAllItems = function() {
 			var db = sargoDB.indexedDB.db;
 			var trans = db.transaction(["sargo"], "readwrite");
@@ -205,8 +205,8 @@ angular.module('sargo', [])
 				var result = e.target.result;
 				if(!!result == false)
 				  return;
-				//alert($scope.data[parseInt(result.value.id) - 1]);
-				//$scope.favArray.push($scope.data[parseInt(result.value.id) - 1]);
+				//alert($scope.json_data.data[parseInt(result.value.id) - 1].id); //Para comprobar visualmente que ids está metiendo en el favArray
+				$scope.favArray.push($scope.json_data.data[parseInt(result.value.id) - 1]);
 				renderFav(result.value.id);
 				result.continue();
 			};
