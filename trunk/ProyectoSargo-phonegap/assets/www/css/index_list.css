@@ -52,6 +52,9 @@ body {
 body a {
 	text-decoration: none;
 }
+body div {
+	text-decoration: none;
+}
 
 hr {
 	border: 1px solid rgba(255,255,255, 0.3);
@@ -352,3 +355,23 @@ color: rgba(0, 0, 0, 0);
 	color: #878787;
 }
 
+/*---Estilos para los favoritos------*/
+
+.tile {
+	width: 200px;
+	float: left;
+	background-color: black;
+	margin: 20px;
+	text-align: center;
+}
+.tileImg {
+	width: 200px;
+	height: 200px;
+}
+.btitulo {
+	color: white;
+	width:100%;
+	margin: 0px 0px 20px 0px;	
+	padding: 0px 0px 0px 5px;
+	text-decoration: none;
+}
