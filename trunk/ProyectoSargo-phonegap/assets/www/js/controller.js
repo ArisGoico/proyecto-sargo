@@ -13,6 +13,7 @@ angular.module('sargo', [])
 		$scope.type = {};
 		$scope.favArray = [];
 		$scope.json_data = [];
+		$scope.json_parsed = false;
 		
 		//Set y Get cookie
 		function setCookie(cname,cvalue)
@@ -125,6 +126,7 @@ angular.module('sargo', [])
 			dataType: "text",
 			success: function(data) {
 				$scope.json_data = jQuery.parseJSON(data);
+				$scope.json_parsed = true;
 				//alert( "success: " + $scope.json_data.data[0].id);
 			}
 		});		
@@ -141,7 +143,7 @@ angular.module('sargo', [])
 
 		//Esta funcion abre la DB y si no existe, la crea
 		sargoDB.indexedDB.open = function() {
-			var version = 5;
+			var version = 6;
 			var request = indexedDB.open("sargo", version);
 
 			// We can only create Object stores in a versionchange transaction.
@@ -206,7 +208,9 @@ angular.module('sargo', [])
 				if(!!result == false)
 				  return;
 				//alert($scope.json_data.data[parseInt(result.value.id) - 1].id); //Para comprobar visualmente que ids está metiendo en el favArray
-				$scope.favArray.push($scope.json_data.data[parseInt(result.value.id) - 1]);
+				if ($scope.json_parsed) {
+					$scope.favArray.push($scope.json_data.data[parseInt(result.value.id) - 1]);
+				}
 				renderFav(result.value.id);
 				result.continue();
 			};
