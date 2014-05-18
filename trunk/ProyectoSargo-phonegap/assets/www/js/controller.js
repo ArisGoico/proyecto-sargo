@@ -1,9 +1,16 @@
 angular.module('sargo', [])
-	.controller('global', function ($scope){	
-		//inicialización de variables
+	.controller('global', function ($scope, $http){	
+		
+		//Leer el json con los datos de los peces con angular.
+		$http.get('../data/data.json').success(function(data) {
+			$scope.json_sergiodata = data;
+			
+		});
+  //inicialización de variables
 
 		$scope.advanced_search = "advanced_search_hid"
 		$scope.id = "";
+		$scope.idcookie = "0050",
 		$scope.order = "commonname";
 		$scope.imgGallery = "imgGallery_off";
 		$scope.input_adsearch = "adsearch_hid";
@@ -14,6 +21,8 @@ angular.module('sargo', [])
 		$scope.favArray = [];
 		$scope.json_data = [];
 		$scope.json_parsed = false;
+		
+		
 		
 		//Set y Get cookie
 		function setCookie(cname,cvalue)
@@ -42,7 +51,7 @@ angular.module('sargo', [])
 		// Recupera desde cookies el ID del animal seleccionado (ficha) y recupera de cookies los filtros hechos por el ususario.
 		$scope.pruebacookie = function () {
 			var t = getCookie("currentfish");
-			$scope.id = t;
+			$scope.idcookie = t;
 			// Si no se recupera comparandolo con undefined, te la marca como undefined y los fltros no funcionan
 			if ( getCookie("filtro") != "undefined"){
 				$scope.type.filter_top = getCookie("filtro");
@@ -117,7 +126,7 @@ angular.module('sargo', [])
 		sargoDB.indexedDB = {};
 		sargoDB.indexedDB.db = null;
 		
-		//Codigo para leer el JSON
+		/*Codigo para leer el JSON
 		
 		
 		$.ajax({
@@ -129,7 +138,7 @@ angular.module('sargo', [])
 				$scope.json_parsed = true;
 				//alert( "success: " + $scope.json_data.data[0].id);
 			}
-		});		
+		});	*/	
 
 		function init() {
 			sargoDB.indexedDB.open(); // open displays the data previously saved

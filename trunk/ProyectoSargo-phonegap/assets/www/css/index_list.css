@@ -366,7 +366,7 @@ color: rgba(0, 0, 0, 0);
 }
 .tileImg {
 	width: 200px;
-	height: 200px;
+	/*height: 200px;*/
 }
 .btitulo {
 	color: white;
