@@ -40,7 +40,7 @@
 	
 </head>
 <body ng-controller="global">
-	<div ng-controller="fish" class="{{contindshow}}">
+	<div  class="{{contindshow}}">
 		<header>
 			<nav class="top_menu" >
 				<button class="topbutton" ng-click="showall(); type_form = ''; type_family = '0'; type_filter_top = '';">Todos</button>
@@ -68,7 +68,7 @@
 		</header>
 		
 			<div class="scroll">
-				<div  ng-repeat="name in data | filter:type.filter_top | filter:{type: type.filter} | filter:{color: type.color} | filter:{familia: type.family.familia} | filter:{wayoflife: type_wayoflife} | filter: {form:type_form} | orderBy:order:reverse">
+				<div  ng-repeat="name in json_sergiodata | filter:type.filter_top | filter:{type: type.filter} | filter:{color: type.color} | filter:{familia: type.family.familia} | filter:{wayoflife: type_wayoflife} | filter: {form:type_form} | orderBy:order:reverse">
 					<a href="ficha_def.html" ng-click="trysetcookie(name.id, type.filter_top, type.color, type.form, type.family )">
 						<div  >
 							<div id="item" class="index_cont" >
@@ -86,10 +86,10 @@
 				</div>
 			
 			</div>
-		</div>
+		</div><!-- FIN DEL CONTAINER-->
 
 		<footer>
 			<div style="height:10px;"></div>
 		</footer>
-	</div> <!-- FIN DEL CONTAINER-->
+	 
 </body>
