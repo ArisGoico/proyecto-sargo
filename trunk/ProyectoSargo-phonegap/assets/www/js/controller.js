@@ -10,7 +10,7 @@ angular.module('sargo', [])
 
 		$scope.advanced_search = "advanced_search_hid"
 		$scope.id = "";
-		$scope.idcookie = "0050",
+		$scope.idcookie = "0050";
 		$scope.order = "commonname";
 		$scope.imgGallery = "imgGallery_off";
 		$scope.input_adsearch = "adsearch_hid";
@@ -21,6 +21,11 @@ angular.module('sargo', [])
 		$scope.favArray = [];
 		$scope.json_data = [];
 		$scope.json_parsed = false;
+		$scope.type.filter_top = "";
+		$scope.type.form = "";
+		$scope.type.color = "";
+		$scope.idcookie = "";
+		$scope.type.family = "";
 		
 		
 		
