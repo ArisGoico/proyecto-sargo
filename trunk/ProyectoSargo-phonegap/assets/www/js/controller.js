@@ -4,7 +4,7 @@ angular.module('sargo', [])
 		//Leer el json con los datos de los peces con angular.
 		$http.get('../data/data.json').success(function(data) {
 			$scope.json_sergiodata = data;
-			
+			init();
 		});
   //inicialización de variables
 
@@ -19,8 +19,6 @@ angular.module('sargo', [])
 		$scope.select_adsearch = "adsearch_hid";
 		$scope.type = {};
 		$scope.favArray = [];
-		$scope.json_data = [];
-		$scope.json_parsed = false;
 		$scope.type.filter_top = "";
 		$scope.type.form = "";
 		$scope.type.color = "";
@@ -96,7 +94,7 @@ angular.module('sargo', [])
 			$scope.advanced_search = "advanced_search_hid"	
 			$scope.input_adsearch = "adsearch_hid";		
 			$scope.select_adsearch = "adsearch_hid";
-			$scope.switch_adsearch = "Más...";			
+			$scope.switch_adsearch = "Más...";		
 		};
 		$scope.showAdsearch = function () {
 			if ($scope.switch_adsearch == "Más...") {
@@ -110,49 +108,40 @@ angular.module('sargo', [])
 				$scope.btn_adsearch = "btn_adsearch";
 				$scope.switch_adsearch = "Más...";
 			};
+			$scope.refreshFavorites();
 		};
 		
 		$scope.showpeces = function () {
 			$scope.type.filter = "pez";
+			$scope.refreshFavorites();
 			return   $scope.type.filter;
 		};
 		$scope.showinvert = function () {
 			$scope.type.filter = "invertebrado";
+			$scope.refreshFavorites();
 			return   $scope.type.filter;
 		};
 		$scope.showall = function () {
 			$scope.type = {};
 			$scope.trysetcookie("", "", "", "", "");
-
+			$scope.refreshFavorites();
 		};
 
 		//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		var sargoDB = {};
 		sargoDB.indexedDB = {};
 		sargoDB.indexedDB.db = null;
-		
-		/*Codigo para leer el JSON
-		
-		
-		$.ajax({
-			url: "data/data.json",
-			crossDomain: true,
-			dataType: "text",
-			success: function(data) {
-				$scope.json_data = jQuery.parseJSON(data);
-				$scope.json_parsed = true;
-				//alert( "success: " + $scope.json_data.data[0].id);
-			}
-		});	*/	
 
 		function init() {
-			sargoDB.indexedDB.open(); // open displays the data previously saved
+			sargoDB.indexedDB.open(); 
 		}
 
 		$scope.addFavorite = function(id) {
-			//var id = document.getElementById('id_input');		//Coger el valor del input en HTML que tenga de la id "id_input"
-
 			sargoDB.indexedDB.addFav(id);	//LLamar al método addFav(id)
+		}
+		
+		$scope.refreshFavorites = function() {
+			sargoDB.indexedDB.getAllItems();
 		}
 
 		//Esta funcion abre la DB y si no existe, la crea
@@ -221,10 +210,7 @@ angular.module('sargo', [])
 				var result = e.target.result;
 				if(!!result == false)
 				  return;
-				//alert($scope.json_data.data[parseInt(result.value.id) - 1].id); //Para comprobar visualmente que ids está metiendo en el favArray
-				if ($scope.json_parsed) {
-					$scope.favArray.push($scope.json_data.data[parseInt(result.value.id) - 1]);
-				}
+				$scope.favArray.push($scope.json_sergiodata[parseInt(result.value.id) - 1]);
 				renderFav(result.value.id);
 				result.continue();
 			};
@@ -263,7 +249,7 @@ angular.module('sargo', [])
 			};
 		};
 
-		window.addEventListener("DOMContentLoaded", init, false);
+		//window.addEventListener("DOMContentLoaded", init, false);
 
 
 		
