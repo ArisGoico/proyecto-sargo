@@ -51,7 +51,7 @@
 		</header>
 		
 			<div class="scroll">
-				<div  ng-repeat="name in data | orderBy:order:reverse">
+				<div  ng-repeat="name in favArray | orderBy:order:reverse">
 					<a href="ficha_def.html" ng-click="trysetcookie(name.id, type.filter_top, type.color, type.form, type.family )">
 						<div class="tile">
 							
