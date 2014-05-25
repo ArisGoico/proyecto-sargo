@@ -31,6 +31,7 @@
     </author>
 
     <access origin="file:///*"/>
+    <access origin="file:///android_asset/www/data/data.json"/>
     
 
     <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
