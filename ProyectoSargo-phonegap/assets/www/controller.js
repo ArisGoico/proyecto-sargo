@@ -1,11 +1,7 @@
 angular.module('sargo', [])
 	.controller('global', function ($scope, $http){	
 		
-		//Leer el json con los datos de los peces con angular.
-		$http.get('data.json').success(function(data) {
-			$scope.json_sergiodata = data;
-			init();
-		});
+		
   //inicialización de variables
 
 		$scope.advanced_search = "advanced_search_hid"
@@ -38,6 +34,7 @@ angular.module('sargo', [])
 			{
 			return window.localStorage.getItem(cname);;
 			};
+			
 		//Métodos
 		$scope.trysetcookie = function (x, filtro, color, forma, familia) {
 			var id = x;
@@ -128,13 +125,25 @@ angular.module('sargo', [])
 		};
 
 		//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		
 		var sargoDB = {};
 		sargoDB.indexedDB = {};
 		sargoDB.indexedDB.db = null;
-
+		
+		
 		function init() {
-			sargoDB.indexedDB.open(); 
+			//Leer el json con los datos de los peces con angular.
+			$http.get('data.json').success(function(data) {
+				$scope.json_sergiodata = data;
+				sargoDB.indexedDB.open(); 
+			}).
+			error(function(data) {
+				alert("No se ha podido cargar el fichero data.");
+			});			
 		}
+		
+		//Lanzar init()
+		//init();
 
 		$scope.addFavorite = function(id) {
 			sargoDB.indexedDB.addFav(id);	//LLamar al método addFav(id)
@@ -146,8 +155,9 @@ angular.module('sargo', [])
 
 		//Esta funcion abre la DB y si no existe, la crea
 		sargoDB.indexedDB.open = function() {
-			var version = 6;
+			var version = 8;
 			var request = indexedDB.open("sargo", version);
+			//alert("Request de apertura mandado");
 
 			// We can only create Object stores in a versionchange transaction.
 			request.onupgradeneeded = function(e) {
@@ -167,11 +177,15 @@ angular.module('sargo', [])
 
 			//Se requiere acceder siempre con un .onsuccess porque todo es asincrono
 			request.onsuccess = function(e) {
+				alert("indexedDB.db cargado");
 				sargoDB.indexedDB.db = e.target.result;
 				sargoDB.indexedDB.getAllItems();
 			};
 
-			request.onerror = sargoDB.indexedDB.onerror;
+			//request.onerror = sargoDB.indexedDB.onerror;
+			request.onerror = function() {
+				alert("Fallo al cargar datos. Mensaje: " + request.error.name);
+			};
 		};
 		
 		//Para añadir datos a la db
@@ -249,8 +263,7 @@ angular.module('sargo', [])
 			};
 		};
 
-		//window.addEventListener("DOMContentLoaded", init, false);
-
+		window.addEventListener("DOMContentLoaded", init, false);
 
 		
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
