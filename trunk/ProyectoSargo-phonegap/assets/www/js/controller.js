@@ -1,8 +1,12 @@
 angular.module('sargo', [])
 	.controller('global', function ($scope, $http){	
 		
+		var sargoDB = {};
+		sargoDB.indexedDB = {};
+		sargoDB.indexedDB.db = null;
+		
 		//Leer el json con los datos de los peces con angular.
-		$http.get('../data/data.json').success(function(data) {
+		$http.get('data.json').success(function(data) {
 			$scope.json_sergiodata = data;
 			init();
 		});
@@ -133,9 +137,11 @@ angular.module('sargo', [])
 		};
 
 		//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+		/*
 		var sargoDB = {};
 		sargoDB.indexedDB = {};
 		sargoDB.indexedDB.db = null;
+		*/
 
 		function init() {
 			sargoDB.indexedDB.open(); 
