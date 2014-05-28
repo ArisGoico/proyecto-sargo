@@ -177,7 +177,7 @@ angular.module('sargo', [])
 
 			//Se requiere acceder siempre con un .onsuccess porque todo es asincrono
 			request.onsuccess = function(e) {
-				alert("indexedDB.db cargado");
+				//alert("indexedDB.db cargado");
 				sargoDB.indexedDB.db = e.target.result;
 				sargoDB.indexedDB.getAllItems();
 			};
