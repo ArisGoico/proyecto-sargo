@@ -155,7 +155,15 @@ angular.module('sargo', [])
 
 		//Esta funcion abre la DB y si no existe, la crea
 		sargoDB.indexedDB.open = function() {
-			var version = 8;
+			var version = 9;
+			/*var indexedDB = window.indexedDB || 
+							window.webkitIndexedDB || 
+							window.mozIndexedDB || 
+							window.moz_indexedDB || 
+							window.msIndexedDB || 
+							window.shimIndexedDB;*/
+			//window.shimIndexedDB.__useShim();
+			var indexedDB = window.indexedDB;
 			var request = indexedDB.open("sargo", version);
 			//alert("Request de apertura mandado");
 
@@ -183,8 +191,8 @@ angular.module('sargo', [])
 			};
 
 			//request.onerror = sargoDB.indexedDB.onerror;
-			request.onerror = function() {
-				alert("Fallo al cargar datos. Mensaje: " + request.error.name);
+			request.onerror = function(event) {
+				alert("Fallo al cargar datos. Mensaje: " + event.target.errorCode);
 			};
 		};
 		
