@@ -1,0 +1,91 @@
+@font-face {
+    font-family: 'robotoregular';
+    src: url('../fonts/roboto-regular-webfont.eot');
+    src: url('../fonts/roboto-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto-regular-webfont.woff') format('woff'),
+         url('../fonts/roboto-regular-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-regular-webfont.svg#robotoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'robotobold';
+    src: url('../fonts/roboto-bold-webfont.eot');
+    src: url('../fonts/roboto-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto-bold-webfont.woff') format('woff'),
+         url('../fonts/roboto-bold-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-bold-webfont.svg#robotobold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'robotoitalic';
+    src: url('../fonts/roboto-italic-webfont.eot');
+    src: url('../fonts/roboto-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto-italic-webfont.woff') format('woff'),
+         url('../fonts/roboto-italic-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-italic-webfont.svg#robotoitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+.containercard {
+    margin: 0 auto;
+    background-color: #222222; 
+    text-align: center;
+}
+.containercardhid {
+	display:none;
+}
+
+.main_image {
+    border-radius: 20px;
+}
+
+.common_name {
+    color: white;
+
+}
+
+.scientific_name {
+
+    color: #878787;
+}
+.map {
+    border: 2px solid #fff;
+    border-radius: 20px;
+    text-align: left;
+	float: left;
+}
+.shortdesc {
+    text-align: left;
+	float: left;
+	color: #878787;
+}
+
+.shortdesc_item {
+	margin: 10px 0px;
+}
+.shortdesc_title {
+	color: white;
+	float: left;
+}
+.main_text {
+    border-radius: 20px;
+    text-align: left;
+	float: none;
+	display: inline-block;
+}
+.main_text_body{
+	color: #878787;
+}
+

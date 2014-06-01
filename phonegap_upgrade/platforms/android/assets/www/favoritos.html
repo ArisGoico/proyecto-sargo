@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="sargo">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<meta name="viewport"
+      content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- CSS comun a todas las pantallas-->
+	<link rel="stylesheet" type="text/css" href="css/index_list.css" />
+	
+	<!--CSS responsiva -->
+		<!--Global para PC-->
+		<link rel="stylesheet" type="text/css" media="screen and (min-width:1300px)" href="css/main_1000.css" /> 
+		<link rel="stylesheet" type="text/css" media="screen and (min-width:721px)" href="css/mobile_720apk.css" /> 
+		<link rel="stylesheet" type="text/css" media="screen and (min-device-width:300px) and (max-device-width:1280px)" href="css/mobile_720apk.css" />
+		
+		
+		<!--Tablets 1280X800-->
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:800px)" href="css/tablet_800.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:1280px)" href="css/tablet_800.css" />
+		
+
+
+	<!--Javascript-->
+	<script src="js/lib/angular.js"></script>
+	<script src="js/lib/jquery-2.1.1.min.js"></script>
+  	<script src="data/data.js"></script>
+	<script src="js/controller.js"></script>
+	
+	
+</head>
+<body ng-controller="global">
+	<div ng-controller="fish" class="{{contindshow}}">
+		<header>
+			<nav class="top_menu" >
+				<a href="index.html" class="topbutton">Volver</a>
+				<div class="search" ng-click="showsearch()"> <span class="helper"></span> <img  class ="imglupa" src="img/lupa.png"></div>
+				<div class="{{advanced_search}}">
+					<button class="close_search"  ng-click="hideadsearch()"> X </button>
+					<input  class="input_search"  ng-model="type.filter_top" placeholder="Palabra clave...">
+					<!--<input  class="{{input_adsearch}}"  ng-model="type.color" placeholder="Escribe el color">
+					<input  class="{{input_adsearch}}"  ng-model="type.form" placeholder="¿Cuál es su forma?">	
+					<select class="{{select_adsearch}}" ng-model="type.family" ng-options="c.familia for c in familyDrop | orderBy:'familia'"><option value="">-- Todas las familias --</option></select>
+					<input  class="{{input_adsearch}}"  ng-model="type_food" placeholder="Alimentación"> 
+					<input  class="{{input_adsearch}}"  ng-model="type_wayoflife" placeholder="Modo de vida"> 
+					<input  class="{{input_adsearch}}"  ng-model="type_family" placeholder="Habitad"> 	
+					<button class="{{btn_adsearch}}"  ng-click="showAdsearch()"> {{switch_adsearch}} </button>-->
+					
+				</div>
+			</nav>
+		</header>
+		
+			<div class="scroll">
+				<div  ng-repeat="name in favArray | orderBy:order:reverse">
+					<a href="ficha_def.html" ng-click="trysetcookie(name.id, type.filter_top, type.color, type.form, type.family )">
+						<div class="tile">
+							
+							<img src="{{name.mainimage}}" class="tileImg" >
+							<div class="btitulo">{{name.commonname}}</div>
+							
+								
+							
+						</div>
+					</a>
+				</div>
+			
+			</div>
+		</div>
+
+		<footer>
+			<div style="height:10px;"></div>
+		</footer>
+	</div> <!-- FIN DEL CONTAINER-->
+</body>
