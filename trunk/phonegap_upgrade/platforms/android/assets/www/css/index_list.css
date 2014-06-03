@@ -223,9 +223,11 @@ color: rgba(0, 0, 0, 0);
 }
 .commonnamei {
     color: white;
+	max-width: 120px;
 }
 .scientific_namei {
     color: #878787;
+	max-width: 120px;
 }
 .names {
 	float: left;
@@ -235,18 +237,18 @@ color: rgba(0, 0, 0, 0);
 .fav_icon_active {
 	float: right;
 	margin-top: 30px;
-	margin-right: 40px;
-	width: 50px;
-	height: 50px;
+	margin-right: 20px;
+	width: 30px;
+	height: 30px;
 	background-image:url("../img/ico_star.png");
 	background-size: cover;
 }
 .fav_icon_inactive {
 	float: right;
 	margin-top: 30px;
-	margin-right: 40px;
-	width: 50px;
-	height: 50px;
+	margin-right: 20px;
+	width: 30px;
+	height: 30px;
 	background-image:url("../img/ico_star_off.png");
 	background-size: cover;
 }
@@ -358,14 +360,14 @@ color: rgba(0, 0, 0, 0);
 /*---Estilos para los favoritos------*/
 
 .tile {
-	width: 200px;
+	width: 100px;
 	float: left;
 	background-color: black;
 	margin: 20px;
 	text-align: center;
 }
 .tileImg {
-	width: 200px;
+	width: 100px;
 	/*height: 200px;*/
 }
 .btitulo {
