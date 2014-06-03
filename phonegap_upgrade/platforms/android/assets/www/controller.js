@@ -133,7 +133,7 @@ angular.module('sargo', [])
 		
 		function init() {
 			//Leer el json con los datos de los peces con angular.
-			$http.get('data.json').success(function(data) {
+			$http.get('../data/data.json').success(function(data) {
 				$scope.json_sergiodata = data;
 				sargoDB.indexedDB.open(); 
 			}).
