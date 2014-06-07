@@ -161,7 +161,7 @@ angular.module('sargo', [])
 
 		//Esta funcion abre la DB y si no existe, la crea
 		sargoDB.indexedDB.open = function() {
-			var version = 9;
+			var version = 10;
 			/*var indexedDB = window.indexedDB || 
 							window.webkitIndexedDB || 
 							window.mozIndexedDB || 
@@ -169,7 +169,7 @@ angular.module('sargo', [])
 							window.msIndexedDB || 
 							window.shimIndexedDB;*/
 			//window.shimIndexedDB.__useShim();
-			var indexedDB = window.indexedDB;
+			var indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
 			var request = indexedDB.open("sargo", version);
 			//alert("Request de apertura mandado");
 
