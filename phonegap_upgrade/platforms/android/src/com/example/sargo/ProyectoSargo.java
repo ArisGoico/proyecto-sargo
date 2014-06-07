@@ -49,7 +49,7 @@ public class ProyectoSargo extends CordovaActivity
             public void run() {
                 doAdMob();
             }
-        }, 3000);
+        }, 30000);
     }
 
     private void doAdMob() {
