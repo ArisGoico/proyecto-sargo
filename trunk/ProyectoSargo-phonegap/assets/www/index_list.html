@@ -30,9 +30,10 @@
 
 
 	<!--Javascript-->
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	<script src="js/lib/angular.js"></script>
-	<script src="js/lib/IndexedDBShim.min.js"></script>
 	<script src="controller.js"></script>
+	<!-- <script src="js/lib/IndexedDBShim.min.js"></script> -->
 	<!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA6cJnxpv05XnN8mETINyBDcZJbEWXSzks&sensor=true"></script>
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
 	
@@ -90,6 +91,23 @@
 		<footer>
 			<div style="height:10px;"></div>
 		</footer>
+		
+		<script type="text/javascript">
+			document.addEventListener("DOMContentLoaded", function(){
+				var x = document.createElement("script");
+				x.src = "IndexedDBShim.min.js";
+				x.onload = function(){
+					window.setTimeout(init_local, 2000);
+				};
+				document.body.appendChild(x);
+			}, false);
+			
+			function init_local() {
+				angular.module('sargo', []).controller('global', function ($scope, $http){
+					$scope.init;
+				});
+			}
+		</script>
 	 
 </body>
 </html>
