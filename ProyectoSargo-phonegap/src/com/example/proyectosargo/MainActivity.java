@@ -19,7 +19,7 @@ public class MainActivity extends DroidGap {
     	super.onCreate(savedInstanceState);
 		//super.loadUrl("file:///android_asset/www/index.html");
 		super.setIntegerProperty("splashscreen", R.drawable.splash);
-		super.loadUrl("file:///android_asset/www/index.html", 10000);
+		super.loadUrl("file:///android_asset/www/index_list.html", 10000);
 
         mHandler.postDelayed(new Runnable() {
             public void run() {

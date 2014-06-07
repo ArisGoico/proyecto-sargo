@@ -24,16 +24,13 @@ angular.module('sargo', [])
 		
 		
 		//Set y Get cookie
-		function setCookie(cname,cvalue)
-			{
+		function setCookie(cname,cvalue) {
 			window.localStorage.setItem(cname, cvalue);
-			
-			};
+		};
 
-		function getCookie(cname)
-			{
+		function getCookie(cname) {
 			return window.localStorage.getItem(cname);;
-			};
+		};
 			
 		//Métodos
 		$scope.trysetcookie = function (x, filtro, color, forma, familia) {
@@ -44,10 +41,12 @@ angular.module('sargo', [])
 			setCookie("forma", forma);
 			setCookie("familia", familia);
 		}
+		
 		$scope.trygetcookie = function () {
 			var prueba = getCookie("currentfish");
 			alert (prueba);
 		}
+		
 		// Recupera desde cookies el ID del animal seleccionado (ficha) y recupera de cookies los filtros hechos por el ususario.
 		$scope.pruebacookie = function () {
 			var t = getCookie("currentfish");
@@ -80,6 +79,7 @@ angular.module('sargo', [])
 		$scope.imgGalleryswitch_on = function () {
 			$scope.imgGallery = "imgGallery_on";
 		};
+		
 		$scope.imgGalleryswitch_off = function () {
 			$scope.imgGallery = "imgGallery_off";
 		};
@@ -87,12 +87,14 @@ angular.module('sargo', [])
 		$scope.showsearch = function () {
 			$scope.advanced_search = "advanced_search"		
 		};
+		
 		$scope.hideadsearch = function () {
 			$scope.advanced_search = "advanced_search_hid"	
 			$scope.input_adsearch = "adsearch_hid";		
 			$scope.select_adsearch = "adsearch_hid";
 			$scope.switch_adsearch = "Más...";		
 		};
+		
 		$scope.showAdsearch = function () {
 			if ($scope.switch_adsearch == "Más...") {
 				$scope.input_adsearch = "input_search";
@@ -113,11 +115,13 @@ angular.module('sargo', [])
 			$scope.refreshFavorites();
 			return   $scope.type.filter;
 		};
+		
 		$scope.showinvert = function () {
 			$scope.type.filter = "invertebrado";
 			$scope.refreshFavorites();
 			return   $scope.type.filter;
 		};
+		
 		$scope.showall = function () {
 			$scope.type = {};
 			$scope.trysetcookie("", "", "", "", "");
@@ -136,9 +140,10 @@ angular.module('sargo', [])
 			$http.get('data.json').success(function(data) {
 				$scope.json_sergiodata = data;
 				sargoDB.indexedDB.open(); 
+				$scope.showall();
 			}).
 			error(function(data) {
-				alert("No se ha podido cargar el fichero data.");
+				alert("No se ha podido cargar el fichero con los datos.");
 			});			
 		}
 		
@@ -150,7 +155,8 @@ angular.module('sargo', [])
 		}
 		
 		$scope.refreshFavorites = function() {
-			sargoDB.indexedDB.getAllItems();
+			if (sargoDB.indexedDB.db != null)
+				sargoDB.indexedDB.getAllItems();
 		}
 
 		//Esta funcion abre la DB y si no existe, la crea
