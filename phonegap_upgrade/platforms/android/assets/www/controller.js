@@ -237,8 +237,10 @@ angular.module('sargo', [])
 			cursorRequest.onsuccess = function(e) {
 				var result = e.target.result;
 				if(!!result == false)
-				  return;
-				$scope.favArray.push($scope.json_sergiodata[parseInt(result.value.id) - 1]);
+					return;
+				$scope.$apply(function() {
+					$scope.favArray.push($scope.json_sergiodata[parseInt(result.value.id) - 1]);
+				});
 				renderFav(result.value.id);
 				result.continue();
 			};
