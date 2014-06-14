@@ -367,12 +367,13 @@ color: rgba(0, 0, 0, 0);
 	text-align: center;
 }
 .tileImg {
-	width: 100px;
+	width: 120px;
 	/*height: 200px;*/
 }
 .btitulo {
+	font-size: 10px;
 	color: white;
-	width:100%;
+	width:120%;
 	margin: 0px 0px 20px 0px;	
 	padding: 0px 0px 0px 5px;
 	text-decoration: none;
