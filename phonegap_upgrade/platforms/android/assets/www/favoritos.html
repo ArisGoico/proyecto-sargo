@@ -47,16 +47,16 @@
 				<div  ng-repeat="name in favArray | orderBy:order:reverse">
 					<a href="ficha_def.html" ng-click="trysetcookie(name.id, type.filter_top, type.color, type.form, type.family )">
 						<div class="tile">
-							
+							<div class ="star_favs" ><a id="{{name.id}}" class="fav_icon_inactive" ng-click="addFavorite(name.id)"></a></div>
 							<img src="{{name.mainimage}}" class="tileImg"></img>
-							<div class="btitulo">{{name.commonname}}</div>
-
+							<div class="btitulo favs">{{name.commonname}}</div>
+							
 							
 								
 							
 						</div>
 					</a>							
-					<a id="{{name.id}}" class="fav_icon_inactive" ng-click="addFavorite(name.id)"></a>
+					
 				</div>
 			
 			</div>
