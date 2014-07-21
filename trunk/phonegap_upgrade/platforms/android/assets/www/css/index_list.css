@@ -360,21 +360,25 @@ color: rgba(0, 0, 0, 0);
 /*---Estilos para los favoritos------*/
 
 .tile {
-	width: 100px;
+	width: 130px;
 	float: left;
 	background-color: black;
-	margin: 20px;
+	margin: 5px;
 	text-align: center;
 }
 .tileImg {
-	width: 120px;
+	width: 130px;
 	/*height: 200px;*/
 }
 .btitulo {
-	font-size: 10px;
+	font-size: 14px;
 	color: white;
-	width:120%;
-	margin: 0px 0px 20px 0px;	
+	margin: 0px 0px 10px 0px;	
 	padding: 0px 0px 0px 5px;
 	text-decoration: none;
+}
+.star_favs{
+margin-top: -27px;
+margin-left: 100px;
+position: absolute;
 }
