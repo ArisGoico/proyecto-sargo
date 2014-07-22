@@ -6,7 +6,7 @@
       content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 	<!-- CSS comun a todas las pantallas-->
-	<link rel="stylesheet" type="text/css" href="css/index_list.css" />
+	<link rel="stylesheet" type="text/css" href="css/favs.css" />
 	
 	<!--CSS responsiva -->
 		<!--Global para PC-->
@@ -47,10 +47,10 @@
 				<div  ng-repeat="name in favArray | orderBy:order:reverse">
 					<a href="ficha_def.html" ng-click="trysetcookie(name.id, type.filter_top, type.color, type.form, type.family )">
 						<div class="tile">
-							<div class ="star_favs" ><a id="{{name.id}}" class="fav_icon_inactive" ng-click="addFavorite(name.id)"></a></div>
+							
 							<img src="{{name.mainimage}}" class="tileImg"></img>
 							<div class="btitulo favs">{{name.commonname}}</div>
-							
+							<a id="{{name.id}}" class="fav_icon_inactive" ng-click="addFavorite(name.id)"></a>
 							
 								
 							

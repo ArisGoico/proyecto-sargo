@@ -378,7 +378,7 @@ color: rgba(0, 0, 0, 0);
 	text-decoration: none;
 }
 .star_favs{
-margin-top: -27px;
+top: 10px;
 margin-left: 100px;
 position: absolute;
 }
