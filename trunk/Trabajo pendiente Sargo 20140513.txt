@@ -1,13 +1,16 @@
-﻿Cosas pendientes a haver en la app de Sargo:
+﻿Cosas pendientes a hacer en la app de Sargo:
 	
 	Splash
 	- Sustituir la que viene por algo nuestro - Aris --> http://docs.phonegap.com/en/2.2.0/cordova_splashscreen_splashscreen.md.html
 	
 	Portada
-	- Cambiar nombre? Logo? Fondos? Imágenes para los menús?
+	- Cambiar nombre HECHO
+	 Logo --> Mafin
+	 Fondos HECHO
+	 Imágenes para los menús --> Se lo puedo pedir a Yle
 	
 	Lista
-	- La búsqueda es dificil de borrar si quieres volver a ver la lista completa. - Necesitamos ideas
+	- La búsqueda es dificil de borrar si quieres volver a ver la lista completa. - Necesitamos ideas --> creo que ya está hecho.
 
 	- Cuando se pulsa uno de los items o alguno de los botones interactivos, un área azul aparece durante un instante. Creo que resuelto pero no estoy seguro.
 	
