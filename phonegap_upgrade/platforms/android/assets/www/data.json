@@ -22,7 +22,7 @@
 	"orden" : "Perciformes",
 	"familia" : "Sparidae",
 	"genero" : "Diplodus",
-	"fav" : "false"
+	"fav" : false
   },
     {
 	"id": "0002",   
@@ -46,7 +46,7 @@
 	"orden" : "Gorgonacea",
 	"familia" : "Coralliidae",
 	"genero" : "Corallium",
-	"fav" : "false"
+	"fav" : false
 	
   },
     {
@@ -71,7 +71,7 @@
 	"orden" : "Octopoda",
 	"familia" : "Octopodidae",
 	"genero" : "Octopus",
-	"fav" : "false"
+	"fav" : false
   },
   {
   	"id": "0004",   
@@ -95,7 +95,7 @@
 	"orden" : "Anguilliformes",
 	"familia" : "Muraenidae",
 	"genero" : "Muraena",
-	"fav" : "false"
+	"fav" : false
   },
     {
   	"id": "0005",   
@@ -119,7 +119,7 @@
 	"orden" : "Perciformes",
 	"familia" : "Serranidae",
 	"genero" : "Epinephelus",  
-	"fav" : "false"
+	"fav" : false
   },
     {
   	"id": "0006",   
@@ -143,7 +143,7 @@
 	"orden" : "Anguilliformes",
 	"familia" : "Congridae",
 	"genero" : "Conger", 
-	"fav" : "false"
+	"fav" : false
  },
      {
 	"id": "0007",   
@@ -167,7 +167,7 @@
 	"orden" : "Antozoa",
 	"familia" : "Coralliidae",
 	"genero" : "Corallium",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0008",   
@@ -191,7 +191,7 @@
 	"orden" : "Decápodos",
 	"familia" : "Braquiura",
 	"genero" : "Inachus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0009",   
@@ -215,7 +215,7 @@
 	"orden" : "Anomura",
 	"familia" : "Decápodos",
 	"genero" : "Dardanus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0010",   
@@ -239,7 +239,7 @@
 	"orden" : "",
 	"familia" : "Opistobranquios",
 	"genero" : "Peltodoris",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0011",   
@@ -263,7 +263,7 @@
 	"orden" : "Tunicados",
 	"familia" : "Ascidiáceos",
 	"genero" : "Ascidia",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0012",   
@@ -287,7 +287,7 @@
 	"orden" : "",
 	"familia" : "Gádidos",
 	"genero" : "Phycis",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0013",   
@@ -311,7 +311,7 @@
 	"orden" : "",
 	"familia" : "Gádidos",
 	"genero" : "Serranus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0014",   
@@ -335,7 +335,7 @@
 	"orden" : "",
 	"familia" : "Serranidae",
 	"genero" : "Serranus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0015",   
@@ -359,7 +359,7 @@
 	"orden" : "",
 	"familia" : "Serranidae",
 	"genero" : "Anthias",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0016",   
@@ -383,7 +383,7 @@
 	"orden" : "Decápodos",
 	"familia" : "Palinúridos",
 	"genero" : "Palinurus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0017",   
@@ -407,7 +407,7 @@
 	"orden" : "",
 	"familia" : "Apogónidos",
 	"genero" : "Apogon",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0018",   
@@ -431,7 +431,7 @@
 	"orden" : "",
 	"familia" : "Carángidos",
 	"genero" : "Seriola",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0019",   
@@ -455,7 +455,7 @@
 	"orden" : "",
 	"familia" : "Esciáenidos",
 	"genero" : "Sciaena",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0020",   
@@ -479,7 +479,7 @@
 	"orden" : "",
 	"familia" : "Morónidos",
 	"genero" : "",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0021",   
@@ -503,7 +503,7 @@
 	"orden" : "",
 	"familia" : "Serránidos",
 	"genero" : "Epinephelus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0022",   
@@ -527,7 +527,7 @@
 	"orden" : "",
 	"familia" : "Serránidos",
 	"genero" : "Mycteroperca",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0023",   
@@ -551,7 +551,7 @@
 	"orden" : "Sdentaria",
 	"familia" : "Sábelido",
 	"genero" : "Bispira",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0024",   
@@ -575,7 +575,7 @@
 	"orden" : "Sdentaria",
 	"familia" : "Sábelidos",
 	"genero" : "Spirographis",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0025",   
@@ -599,7 +599,7 @@
 	"orden" : "Sdentaria",
 	"familia" : "Serpúlidos",
 	"genero" : "Filograna",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0026",   
@@ -623,7 +623,7 @@
 	"orden" : "Sdentaria",
 	"familia" : "Serpúlidos",
 	"genero" : "Protula",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0027",   
@@ -647,7 +647,7 @@
 	"orden" : "Sdentaria",
 	"familia" : "Serpúlidos",
 	"genero" : "Serpula",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0028",   
@@ -671,7 +671,7 @@
 	"orden" : "Forcipulata",
 	"familia" : "Asteriidae",
 	"genero" : "Marthasterias",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0029",   
@@ -695,7 +695,7 @@
 	"orden" : "Forcipulata",
 	"familia" : "Asteriidae",
 	"genero" : "Estrella",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0030",   
@@ -719,7 +719,7 @@
 	"orden" : "Spinulosa",
 	"familia" : "Echinasteridae",
 	"genero" : "Echinaster",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0031",   
@@ -743,7 +743,7 @@
 	"orden" : "Spinulosa",
 	"familia" : "Ophiasteroideos",
 	"genero" : "Hacelia",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0032",   
@@ -767,7 +767,7 @@
 	"orden" : "Sdentaria",
 	"familia" : "Sábelidos",
 	"genero" : "Sabella",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0033",   
@@ -791,7 +791,7 @@
 	"orden" : "Alcyonáceos",
 	"familia" : "Alcyoniidae",
 	"genero" : "Alcyonium",
-	"fav" : "false"
+	"fav" : false
   },
 	{
 	"id": "0034",   
@@ -815,7 +815,7 @@
 	"orden" : "Alcyonáceos",
 	"familia" : "Alcyoniidae",
 	"genero" : "Alcyonium",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0035",   
@@ -839,7 +839,7 @@
 	"orden" : "Gorgonáceos",
 	"familia" : "Gorgoniidae",
 	"genero" : "Eunicella",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0036",   
@@ -863,7 +863,7 @@
 	"orden" : "Gorgonáceos",
 	"familia" : "Gorgoniidae",
 	"genero" : "Eunicella",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0037",   
@@ -887,7 +887,7 @@
 	"orden" : "Alcyonáceos",
 	"familia" : "Alcyoniidae",
 	"genero" : "Alcyonium",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0038",   
@@ -911,7 +911,7 @@
 	"orden" : "",
 	"familia" : "Sparidae",
 	"genero" : "Boops",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0039",   
@@ -935,7 +935,7 @@
 	"orden" : "",
 	"familia" : "Sparidae",
 	"genero" : "Dentex",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0040",   
@@ -959,7 +959,7 @@
 	"orden" : "",
 	"familia" : "Sparidae",
 	"genero" : "Diplodus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0041",   
@@ -983,7 +983,7 @@
 	"orden" : "",
 	"familia" : "Sparidae",
 	"genero" : "Diplodus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0042",   
@@ -1007,7 +1007,7 @@
 	"orden" : "",
 	"familia" : "Sparidae",
 	"genero" : "Diplodus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0043",   
@@ -1031,7 +1031,7 @@
 	"orden" : "",
 	"familia" : "Mullidae",
 	"genero" : "Mullus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0044",   
@@ -1055,7 +1055,7 @@
 	"orden" : "",
 	"familia" : "Mullidae",
 	"genero" : "Mullus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0045",   
@@ -1079,7 +1079,7 @@
 	"orden" : "Gorgonáceos",
 	"familia" : "Gorgoniidae",
 	"genero" : "Lophogorgia",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0046",   
@@ -1103,7 +1103,7 @@
 	"orden" : "Gorgonáceos",
 	"familia" : "Gorgoniidae",
 	"genero" : "Ellisella",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0047",   
@@ -1127,7 +1127,7 @@
 	"orden" : "Gorgonáceos",
 	"familia" : "Gorgoniidae",
 	"genero" : "Paramuriacea",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0048",   
@@ -1151,7 +1151,7 @@
 	"orden" : "Gorgonáceos",
 	"familia" : "Gorgoniidae",
 	"genero" : "Eunicella",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0049",   
@@ -1175,7 +1175,7 @@
 	"orden" : "",
 	"familia" : "Sparidae",
 	"genero" : "Spondiliosoma",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0050",   
@@ -1199,7 +1199,7 @@
 	"orden" : "",
 	"familia" : "Sparidae",
 	"genero" : "Diplodus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0051",   
@@ -1223,7 +1223,7 @@
 	"orden" : "",
 	"familia" : "Sparidae",
 	"genero" : "Oblada",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0052",   
@@ -1247,7 +1247,7 @@
 	"orden" : "",
 	"familia" : "Sparidae",
 	"genero" : "Sarpa",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0053",   
@@ -1271,7 +1271,7 @@
 	"orden" : "Nudibranquios",
 	"familia" : "",
 	"genero" : "Cratena",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0054",   
@@ -1295,7 +1295,7 @@
 	"orden" : "Nudibranquios",
 	"familia" : "",
 	"genero" : "Flabelina",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0055",   
@@ -1319,7 +1319,7 @@
 	"orden" : "",
 	"familia" : "Centracántidos",
 	"genero" : "Spicara",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0056",   
@@ -1343,7 +1343,7 @@
 	"orden" : "",
 	"familia" : "Labridae",
 	"genero" : "Labrus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0057",   
@@ -1367,7 +1367,7 @@
 	"orden" : "",
 	"familia" : "Labridae",
 	"genero" : "Labrus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0058",   
@@ -1391,7 +1391,7 @@
 	"orden" : "",
 	"familia" : "Labridae",
 	"genero" : "Coris",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0059",   
@@ -1415,7 +1415,7 @@
 	"orden" : "",
 	"familia" : "Labridae",
 	"genero" : "Labrus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0060",   
@@ -1439,7 +1439,7 @@
 	"orden" : "",
 	"familia" : "Pomacentridae",
 	"genero" : "Chromis",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0061",   
@@ -1463,7 +1463,7 @@
 	"orden" : "Nudibranquios",
 	"familia" : "",
 	"genero" : "Flabellina",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0062",   
@@ -1487,7 +1487,7 @@
 	"orden" : "Nudibranquios",
 	"familia" : "",
 	"genero" : "Flabellina",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0063",   
@@ -1511,7 +1511,7 @@
 	"orden" : "",
 	"familia" : "",
 	"genero" : "Dondice",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0064",   
@@ -1535,7 +1535,7 @@
 	"orden" : "",
 	"familia" : "blenniidae",
 	"genero" : "Parablennius",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0065",   
@@ -1559,7 +1559,7 @@
 	"orden" : "",
 	"familia" : "blenniidae",
 	"genero" : "Parablennius",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0066",   
@@ -1583,7 +1583,7 @@
 	"orden" : "",
 	"familia" : "blenniidae",
 	"genero" : "Parablennius",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0067",   
@@ -1607,7 +1607,7 @@
 	"orden" : "",
 	"familia" : "blenniidae",
 	"genero" : "Parablennius",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "068",   
@@ -1631,7 +1631,7 @@
 	"orden" : "",
 	"familia" : "gobiidae",
 	"genero" : "Gobius",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0069",   
@@ -1655,7 +1655,7 @@
 	"orden" : "",
 	"familia" : "gobiidae",
 	"genero" : "Gobius",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0070",   
@@ -1679,7 +1679,7 @@
 	"orden" : "Spinulosa",
 	"familia" : "Ophidiasteroideos",
 	"genero" : "Ophidiaster",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0071",   
@@ -1703,7 +1703,7 @@
 	"orden" : "",
 	"familia" : "Labridae",
 	"genero" : "Thalassoma",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0072",   
@@ -1727,7 +1727,7 @@
 	"orden" : "",
 	"familia" : "Labridae",
 	"genero" : "Symphodus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0073",   
@@ -1751,7 +1751,7 @@
 	"orden" : "",
 	"familia" : "Labridae",
 	"genero" : "Symphodus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0074",   
@@ -1775,7 +1775,7 @@
 	"orden" : "",
 	"familia" : "Labridae",
 	"genero" : "Symphodus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0075",   
@@ -1799,7 +1799,7 @@
 	"orden" : "",
 	"familia" : "Labridae",
 	"genero" : "Symphodus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0076",   
@@ -1823,7 +1823,7 @@
 	"orden" : "Osteíctios ",
 	"familia" : "Labridae",
 	"genero" : "Symphodus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0077",   
@@ -1847,7 +1847,7 @@
 	"orden" : "",
 	"familia" : "Labridae",
 	"genero" : "Symphodus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0078",   
@@ -1871,7 +1871,7 @@
 	"orden" : "Nudibranquios",
 	"familia" : "Chromodoridudae",
 	"genero" : "Chromodoris",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0079",   
@@ -1895,7 +1895,7 @@
 	"orden" : "Nudibranquios",
 	"familia" : "Chromodoridudae",
 	"genero" : "Chromodoris",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0080",   
@@ -1919,7 +1919,7 @@
 	"orden" : "",
 	"familia" : "",
 	"genero" : "",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0081",   
@@ -1943,7 +1943,7 @@
 	"orden" : "Nudibranquios",
 	"familia" : "Chromodoridudae",
 	"genero" : "Hypselodoris",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0082",   
@@ -1967,7 +1967,7 @@
 	"orden" : "Nudibranquios",
 	"familia" : "",
 	"genero" : "Platidoris",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0083",   
@@ -1991,7 +1991,7 @@
 	"orden" : "Nudibranquios",
 	"familia" : "Chromodoridudae",
 	"genero" : "Hypselodoris",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0084",   
@@ -2015,7 +2015,7 @@
 	"orden" : "Nudibranquios",
 	"familia" : "Chromodoridudae",
 	"genero" : "",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0085",   
@@ -2039,7 +2039,7 @@
 	"orden" : "",
 	"familia" : "Sphyraenidae",
 	"genero" : "Sphyraena",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0086",   
@@ -2063,7 +2063,7 @@
 	"orden" : "",
 	"familia" : "Mugilidae",
 	"genero" : "Mugil",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0087",   
@@ -2087,7 +2087,7 @@
 	"orden" : "",
 	"familia" : "Tripterygiidae",
 	"genero" : "Tripterygion",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0088",   
@@ -2111,7 +2111,7 @@
 	"orden" : "",
 	"familia" : "Bothidae",
 	"genero" : "Bothus",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0089",   
@@ -2135,7 +2135,7 @@
 	"orden" : "",
 	"familia" : "Scorpaenidae",
 	"genero" : "Scorpaena",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0090",   
@@ -2159,7 +2159,7 @@
 	"orden" : "",
 	"familia" : "Scorpaenidae",
 	"genero" : "Scorpaena",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0091",   
@@ -2183,7 +2183,7 @@
 	"orden" : "",
 	"familia" : "Scorpaenidae",
 	"genero" : "Scorpaena",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0092",   
@@ -2207,7 +2207,7 @@
 	"orden" : "",
 	"familia" : "Molidae",
 	"genero" : "Mola",
-	"fav" : "false"
+	"fav" : false
   },
   {
 	"id": "0093",   
@@ -2231,7 +2231,7 @@
 	"orden" : "Nudibranquios",
 	"familia" : "Diaphorodoris",
 	"genero" : "Diaphorodoris",
-	"fav" : "false"
+	"fav" : false
   }
   
   ]
