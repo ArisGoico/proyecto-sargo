@@ -148,7 +148,11 @@ angular.module('sargo', [])
 	}
 
 	$scope.addFavorite = function(id) {
-		setActiveFav(id);
+		var fav_icon = document.getElementById(id);
+		if (fav_icon.className == "true")
+			setInactiveFav(id);
+		else
+			setActiveFav(id);
 	}
 	
 	$scope.refreshFavorites = function() {
@@ -160,28 +164,14 @@ angular.module('sargo', [])
 			addLog("No se ha podido cargar el fichero con los datos.");
 			alert("No se ha podido cargar el fichero con los datos.");
 		});	
-	}
-	
-	$scope.save = function() {
-		$http.post('data.json', $scope.json_sergiodata).then(function(data) {
-			addLog("Datos correctamente guardados en data.json.");
-		});
-	};
-	
-	var listener;
+	}	
 	
 	function setActiveFav(id) {
 		var number = parseInt(id) - 1;
 		if (!isNaN(number)) {
 			$scope.json_sergiodata[number].fav = true;
-			var fav_icon = document.getElementById(id);
-			if (fav_icon.className == "fav_icon_active")
-				return;
-			listener = function(e) {
-				setInactiveFav(id);
-			};
-			fav_icon.addEventListener("click", listener);
-			fav_icon.className = "fav_icon_active";
+			//var fav_icon = document.getElementById(id);
+			//fav_icon.className = "fav_icon_active";
 			$scope.save();
 			addLog("La ficha con id=" + id + " ha sido a&ntilde;adida como favorito.");
 		}
@@ -195,9 +185,9 @@ angular.module('sargo', [])
 		var number = parseInt(id) - 1;
 		if (!isNaN(number)) {
 			$scope.json_sergiodata[number].fav = false;
-			var fav_icon = document.getElementById(id);
-			fav_icon.removeEventListener("click", listener);
-			fav_icon.className = "fav_icon_inactive";
+			//var fav_icon = document.getElementById(id);
+			//fav_icon.removeEventListener("click", listener);
+			//fav_icon.className = "fav_icon_inactive";
 			$scope.save();
 			addLog("La ficha con id=" + id + " ha sido eliminada como favorito.");
 		}
@@ -206,6 +196,25 @@ angular.module('sargo', [])
 			alert("La ficha con id=" + id + " no se puede parsear a un numero correcto.");
 		}	
 	}
+	
+	$scope.save = function() {
+	
+		$http({
+            method: 'POST',
+            url: 'data.json',
+            data: $scope.json_sergiodata
+        }).success(function(response) {
+            addLog("Datos correctamente guardados en data.json.");
+        }).error(function(response){
+            addLog("Datos no correctamente guardados en data.json.");
+        });
+		
+		/*
+		$http.post('data.json', $scope.json_sergiodata).success(function(data) {
+			addLog("Datos correctamente guardados en data.json.");
+		});
+		*/
+	};
 
 		
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
