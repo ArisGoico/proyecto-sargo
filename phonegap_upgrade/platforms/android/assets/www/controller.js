@@ -202,7 +202,8 @@ angular.module('sargo', [])
 		$http({
             method: 'POST',
             url: 'data.json',
-            data: $scope.json_sergiodata
+            data: $scope.json_sergiodata,
+			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).success(function(response) {
             addLog("Datos correctamente guardados en data.json.");
         }).error(function(response){
