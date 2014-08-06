@@ -14,14 +14,19 @@ angular.module('sargo', [])
 	$scope.switch_adsearch = "Más...";
 	$scope.select_adsearch = "adsearch_hid";
 	$scope.type = {};
-	$scope.favArray = [];
 	$scope.type.filter_top = "";
 	$scope.type.form = "";
 	$scope.type.color = "";
 	$scope.idcookie = "";
 	$scope.type.family = "";
+	
+	//-------------Variables necesarias para el uso de favoritos-------------------
+	$scope.favArray = [];
+	$scope.webStorage = true;
+	
+	//-------------Variables para mantener el log de eventos de la app-------------
 	$scope.log = "";
-	$scope.debugMode = false;
+	$scope.debugMode = true;		//Esta linea hace que salgan por consola toda la información de los sucesos que ocurren en cuanto a favs (la parte de Aris)
 	
 	
 	
@@ -109,25 +114,25 @@ angular.module('sargo', [])
 			$scope.btn_adsearch = "btn_adsearch";
 			$scope.switch_adsearch = "Más...";
 		};
-		//$scope.refreshFavorites();
+		$scope.refreshFavorites();
 	};
 	
 	$scope.showpeces = function () {
 		$scope.type.filter = "pez";
-		//$scope.refreshFavorites();
+		$scope.refreshFavorites();
 		return   $scope.type.filter;
 	};
 	
 	$scope.showinvert = function () {
 		$scope.type.filter = "invertebrado";
-		//$scope.refreshFavorites();
+		$scope.refreshFavorites();
 		return   $scope.type.filter;
 	};
 	
 	$scope.showall = function () {
 		$scope.type = {};
 		$scope.trysetcookie("", "", "", "", "");
-		//$scope.refreshFavorites();
+		$scope.refreshFavorites();
 	};
 
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -137,18 +142,31 @@ angular.module('sargo', [])
 	function init() {
 		//Leer el json con los datos de los peces con angular.
 		$http.get('data.json').success(function(data) {
-			$scope.json_sergiodata = data;
+			$scope.json_data = data;
 			addLog("Fichero de datos JSON cargado.");
-							
+			$scope.refreshFavorites();
 		}).
 		error(function(data) {
 			addLog("No se ha podido cargar el fichero con los datos.");
 			alert("No se ha podido cargar el fichero con los datos.");
-		});			
+		});	
+		//Comprobar si existe posibilidad de usar LocalStorage
+		if(typeof(Storage) !== "undefined") {
+			// Existe LocalStorage y se puede usar
+			$scope.webStorage = true;
+			addLog("Comprobación de localStorage satisfactoria.");
+		} else {
+			// No se puede usar LocalStorage
+			$scope.webStorage = false;
+			addLog("Comprobación de localStorage fallada. No se usará localStorage.");
+		}
 	}
 
 	$scope.addFavorite = function(id) {
+		//Comprobamos que hay posibilidad de usar LocalStorage, y en caso contrario no hacemos nada
+		if (!$scope.webStorage)	return;
 		var fav_icon = document.getElementById(id);
+		//Comprobamos en que estado está el item: favorito ya o no
 		if (fav_icon.className == "true")
 			setInactiveFav(id);
 		else
@@ -156,24 +174,36 @@ angular.module('sargo', [])
 	}
 	
 	$scope.refreshFavorites = function() {
-		$http.get('data.json').success(function(data) {
-			$scope.json_sergiodata = data;
-			addLog("Fichero de datos JSON cargado.");			
-		}).
-		error(function(data) {
-			addLog("No se ha podido cargar el fichero con los datos.");
-			alert("No se ha podido cargar el fichero con los datos.");
-		});	
+		var numKeys = window.localStorage.length;
+		var numItems = $scope.json_data.length;
+		var numChanged = 0;
+		var numFavs = 0;
+		addLog("Refrescar favoritos iniciado. Total de llaves en LocalStorage=" + numKeys + ". Total de elementos a revisar=" + numItems + ".");
+		for (var i = 0; i < numItems; i++) {
+			var value = window.localStorage.getItem(i);
+			if (value == null || ((value != "true") && (value != "false"))) {
+				addLog("La llave '" + i + "' con el valor '" + value + "' es errónea.");
+				continue;
+			}
+			else {
+				if (value == "true") {
+					$scope.json_data[i].fav = true;
+					numFavs++;
+				}
+				else
+					$scope.json_data[i].fav = false;
+				numChanged++;
+			}
+		}
+		addLog("Refrescar favoritos Terminado. Total de items con valor=" + numChanged + ". Total de favoritos=" + numFavs + ".");
 	}	
 	
 	function setActiveFav(id) {
 		var number = parseInt(id) - 1;
 		if (!isNaN(number)) {
-			$scope.json_sergiodata[number].fav = true;
-			//var fav_icon = document.getElementById(id);
-			//fav_icon.className = "fav_icon_active";
+			setFav(number, true);
 			$scope.save();
-			addLog("La ficha con id=" + id + " ha sido a&ntilde;adida como favorito.");
+			addLog("La ficha con id=" + id + " ha sido añadida como favorito.");
 		}
 		else {
 			addLog("La ficha con id=" + id + " no se puede parsear a un numero correcto.");
@@ -184,10 +214,7 @@ angular.module('sargo', [])
 	function setInactiveFav(id) {
 		var number = parseInt(id) - 1;
 		if (!isNaN(number)) {
-			$scope.json_sergiodata[number].fav = false;
-			//var fav_icon = document.getElementById(id);
-			//fav_icon.removeEventListener("click", listener);
-			//fav_icon.className = "fav_icon_inactive";
+			setFav(number, false);
 			$scope.save();
 			addLog("La ficha con id=" + id + " ha sido eliminada como favorito.");
 		}
@@ -197,24 +224,13 @@ angular.module('sargo', [])
 		}	
 	}
 	
-	$scope.save = function() {
+	function setFav(id, value) {
+		$scope.json_data[id].fav = value;
+		window.localStorage.setItem(id,value);
+	}
 	
-		$http({
-            method: 'POST',
-            url: 'data.json',
-            data: $scope.json_sergiodata,
-			headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-        }).success(function(response) {
-            addLog("Datos correctamente guardados en data.json.");
-        }).error(function(response){
-            addLog("Datos no correctamente guardados en data.json.");
-        });
+	$scope.save = function() {	
 		
-		/*
-		$http.post('data.json', $scope.json_sergiodata).success(function(data) {
-			addLog("Datos correctamente guardados en data.json.");
-		});
-		*/
 	};
 
 		
@@ -223,8 +239,16 @@ angular.module('sargo', [])
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
 	function addLog(text) {
+		var formattedText = "[" + getFormattedTime() + "] - " + text;
+		$scope.log += formattedText;
 		if ($scope.debugMode)
-			$scope.log += text + "<br>";
+			console.log(formattedText);
+	}
+	
+	function getFormattedTime() {
+		var output = new Date();
+		output = output.toUTCString();
+		return output;
 	}
 
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------

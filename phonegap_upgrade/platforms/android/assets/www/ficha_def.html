@@ -49,7 +49,7 @@
 
 	<div  class="containercard" >
 			<!--<nav><button ng-click="pruebacookie()" class="backbutton"><img src="img/back.png" class="backimg"> <div class="backtext">Índice</div></button></nav>-->
-		<div ng-repeat="name in json_sergiodata | filter:idcookie">
+		<div ng-repeat="name in json_data | filter:idcookie">
 			<div  class="img_name">
 				<img ng-click="imgGalleryswitch_on()" src="{{name.mainimage}}" class="main_image"></img>
 				
@@ -62,7 +62,7 @@
 				</div>				
 			</div>
 			<!--Imagen a pantalla completa-->
-			<div ng-click="imgGalleryswitch_off()" ng-repeat="name in json_sergiodata | filter:idcookie" class="{{imgGallery}}"  > 
+			<div ng-click="imgGalleryswitch_off()" ng-repeat="name in json_data | filter:idcookie" class="{{imgGallery}}"  > 
 				<button ng-click="imgGalleryswitch_off()" class="closebutton"><img src="img/close.png"> </button>
 				<span class="helper"></span><img src="{{name.mainimage}}" class="imgGallery">
 			</div>
@@ -70,7 +70,7 @@
 
 			
 			<article class="shortdesc" >
-				<div class="shortdesc_item" ng-repeat="name in json_sergiodata | filter:idcookie">
+				<div class="shortdesc_item" ng-repeat="name in json_data | filter:idcookie">
 					<div class="shortdesc_title">Coloración:&nbsp;</div>	{{name.color}} <br>
 					<div class="shortdesc_title">Morfología:&nbsp;</div>	{{name.form}} <br>
 					<div class="shortdesc_title">Modo de vida:&nbsp;</div>	{{name.wayoflife}} <br>
@@ -80,7 +80,7 @@
 			</article>
 					
 			<article class="main_text" >
-				<div class="description" ng-repeat="name in json_sergiodata | filter:idcookie">
+				<div class="description" ng-repeat="name in json_data | filter:idcookie">
 					<h1>Descripción</h1>
 					<div class="main_text_body">{{name.description}}</div>
 					<br>
