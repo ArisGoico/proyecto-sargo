@@ -39,9 +39,71 @@
 	"description" : "Comunidad que ocupa la parte permanentemente emergida de las rocas y acantilados costeros afectada por las salpicaduras de las olas.",
 	"sustrato" : "Rocoso.",
 	"luminosity" : "Alto al estar emergido.",	
-	"prof" :  "Por encima de la línea más alta de la marea. Su amplitud se reconoce fácilmente por el tono oscuro, casi negro que adquiere la roca debido al liquen incrustante Verrucaria symbalana",
+	"prof" :  "Por encima de la línea más alta de la marea. Su amplitud se reconoce fácilmente por el tono oscuro, casi negro que adquiere la roca debido al liquen incrustante Verrucaria symbalana.",
 	"species" : "Es una comunidad muy reducida debido a las duras condiciones ambientales. Además del liquen ya mencionado se pueden encontrar especies ocasionales como los bígaros (Littorina sp.) algún isópodo.",
 	"general" : "Su amplitud varía dependiendo del grado de agitación de las aguas en cada zona. Es frecuente ver en esta franja alguna especie de cangrejos que suben desde el piso inferior ocasionalmente."
+  },
+    {
+	"id": "c005",   
+	"mainimage": "img/com/ArenaInfralitoral.jpg",
+	"name" : "Supralitoral rocoso",
+	"description" : "Comunidad de seres marinos que desarrollan parte o todo su ciclo vital enterrados o sobre fondos de arena o fango.",
+	"sustrato" : "Arenas con distintos grados de granulometría o fango.",
+	"luminosity" : "Depende exclusivamente de la profundidad y de la claridad del agua.",	
+	"prof" :  "Se extiende desde la línea de costa hasta los fondos abisales.",
+	"species" : "Depende de la profundidad, que determina el grado de iluminación, y de la granulometría del sustrato. Variando en función de estos factores en estos fondos domina la endofauna (animales que viven dentro del sustrato). Son frecuentes los moluscos, (almejas y similares),  gusanos de diversas especies, erizos irregulares de arena, etc. que viven enterrados casi todo su ciclo vital. También se asientan en este tipo de fondos peces que pasan gran parte de su tiempo semienterrados como los lenguados y otros peces planos o los peces araña.",
+	"general" : "Sobre fondos arenosos se asientan las praderas de fanerógamas marinas, siendo en el Medietrráneo las más importantes las de Posidonia oceánica  y Cimodocea nodosa que constituyen en sí mismas un tipo de comunidad diferenciada."
+  },
+    {
+	"id": "c006",   
+	"mainimage": "img/com/CircalitoralRocoso.jpg",
+	"name" : "Circalitoral rocoso",
+	"description" : "Comunidades que aparecen cuando la cantidad de luz ya no permite el desarrollo de las algas fotófilas o la presencia de fanerógamas marinas.",
+	"sustrato" : "Rocoso.",
+	"luminosity" : "Escaso prácticamente nulo en función de la profundidad.",	
+	"prof" :  "Desde el final del infralitoral (entre los -30 o -35 metros) hasta el final de la zona fótica que puede llegar a los -200 dependiendo de la claridad del agua en cada zona.",
+	"species" : "Las más características de esta zona son las algas esciáfilas y, sobre todo, las calcáreas del tipo de la Pseudolithophyllum expansun que llegan a formar un sustrato duro secundario que sirve de hábitat a numerosas especies de crustáceos (como la langosta), ascídeas, corales blandos, equinodermos, etc. En algunas zonas del litoral, las grandes gorgónias constituyen una de sus facies más relevantes.",
+	"general" : "La comunidad “climax” de este piso, formada realmente por las algas calcáreas concrecionantes es el llamado coralígeno aludiendo a la presencia del coral rojo, si bien esta especie, hoy muy escasa, es más propia de cuevas semioscuras."
+  },
+    {
+	"id": "c007",   
+	"mainimage": "img/com/enclaves.jpg",
+	"name" : "Enclaves esciáfilos del infralitoral",
+	"description" : "Comunidades que viven en lugares resguardados de la luz en la zona infralitoral como cornisas o paredes extraplomadas.",
+	"sustrato" : "Rocoso.",
+	"luminosity" : "Escaso al estar en lugares resguardados de la luz directa.",	
+	"prof" :  "Indistintamente en todo el rango de profundidad de la zona infralitoral.",
+	"species" : "Fundamentalmente algas esciáfilas como Halimeda tuna o  Udotea petiolata y gran variedad de fauna del tipo incrustante o tapizante como esponjas, ascídeas, cnidarios entre los que suele abundar el Parazoanthus axinellae e incluso corales blandos y otras especies propias de mayores profundidades donde la luz es mucho menos intensa.",
+	"general" : "Un caso particular de “enclave” es el que constituyen las partes inferiores de piedras y pequeños bloques de derrubio que, en su cara superior expuesta a  la luz, presentan la facies de algas fotófilas que impere en la zona mientras que en su cara inferior dan refugio a multitud de seres que huyen de la luz, entre otros a ejemplares jóvenes de erizos y estrellas, ofiuras, chafarrocas, etc."
+  },
+    {
+	"id": "c008",   
+	"mainimage": "img/com/grutas_semioscuras.jpg",
+	"name" : "Grutas semioscuras",
+	"description" : "Comunidades exclusivamente zoológicas en grietas profundas o grutas.",
+	"sustrato" : "Rocoso.",
+	"luminosity" : "Casi nulo.",	
+	"prof" :  "Estas comunidades no dependen del factor profundidad.",
+	"species" : "Exclusivamente animales dado que el grado de escasa iluminación no permite la existencia de ningún ser fotositético. Las paredes suelen estar tapizadas por distintas especies de esponjas, madreporarios, cnidarios como el Parazoanthus axinellae que recubre grandes superficies. Son frecuentes camarones, quisquillas y peces amantes de la escasa iluminación como las brótolas, los reyezuelos o los tres colas.",
+	"general" : "Como las oquedades y pequeñas grutas pueden estar a poca profundidad su escasa iluminación permite observar especies propias de mayores profundidades donde la luz es ya escasa como langostas, bogavantes y otras ya nombradas en el apartado anterior."
   }
   
   ]
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
