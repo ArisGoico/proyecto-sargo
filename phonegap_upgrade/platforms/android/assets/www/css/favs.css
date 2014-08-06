@@ -234,7 +234,7 @@ color: rgba(0, 0, 0, 0);
 	text-align: left;
 	padding:15px 20px;
 }
-.fav_icon_active {
+.true {
 margin-top: 30px;
 width: 30px;
 height: 30px;
@@ -244,7 +244,7 @@ position: absolute;
 top: -29px;
 right: 0;
 }
-.fav_icon_inactive {
+.false {
 	margin-top: 30px;
 	width: 30px;
 	height: 30px;
