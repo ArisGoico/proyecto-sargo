@@ -44,12 +44,12 @@
 		</header>
 		
 			<div class="scroll">
-				<div  ng-repeat="name in json_data | filter:{fav: true} | orderBy:order:reverse">
+				<div onload="myfunction()" ng-repeat="name in json_data | filter:{fav: true} | orderBy:order:reverse">
 					<a href="ficha_def.html" ng-click="trysetcookie(name.id, type.filter_top, type.color, type.form, type.family )">
 						<div class="tile">
 							
 							<img src="{{name.mainimage}}" class="tileImg"></img>
-							<div class="btitulo favs">{{name.commonname}}</div>
+							<div id="favList"  class="btitulo favs">{{name.commonname}}</div>
 							<a id="{{name.id}}" class="{{name.fav}}" ng-click="addFavorite(name.id)"></a>
 							
 								
@@ -61,8 +61,11 @@
 			
 			</div>
 		</div>
+		<div id="nofavs"></div>
 
 		<footer>
 			<div style="height:10px;"></div>
 		</footer> 
+		
+		
 </body>
