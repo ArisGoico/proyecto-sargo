@@ -202,7 +202,6 @@ angular.module('sargo', [])
 		var number = parseInt(id) - 1;
 		if (!isNaN(number)) {
 			setFav(number, true);
-			//$scope.save();
 			addLog("La ficha con id=" + id + " ha sido añadida como favorito.");
 		}
 		else {
@@ -215,7 +214,6 @@ angular.module('sargo', [])
 		var number = parseInt(id) - 1;
 		if (!isNaN(number)) {
 			setFav(number, false);
-			//$scope.save();
 			addLog("La ficha con id=" + id + " ha sido eliminada como favorito.");
 		}
 		else {
@@ -228,12 +226,6 @@ angular.module('sargo', [])
 		$scope.json_data[id].fav = value;
 		window.localStorage.setItem(id,value);
 	}
-	
-	/*
-	$scope.save = function() {	
-		
-	};
-	*/
 
 		
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
