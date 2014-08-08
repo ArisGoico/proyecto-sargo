@@ -19,6 +19,7 @@ angular.module('sargo', [])
 	$scope.type.color = "";
 	$scope.idcookie = "";
 	$scope.type.family = "";
+
 	
 	//-------------Variables necesarias para el uso de favoritos-------------------
 	$scope.favArray = [];
@@ -114,25 +115,24 @@ angular.module('sargo', [])
 			$scope.btn_adsearch = "btn_adsearch";
 			$scope.switch_adsearch = "Más...";
 		};
-		$scope.refreshFavorites();
+
 	};
 	
 	$scope.showpeces = function () {
 		$scope.type.filter = "pez";
-		$scope.refreshFavorites();
+
 		return   $scope.type.filter;
 	};
 	
 	$scope.showinvert = function () {
 		$scope.type.filter = "invertebrado";
-		$scope.refreshFavorites();
+
 		return   $scope.type.filter;
 	};
 	
 	$scope.showall = function () {
 		$scope.type = {};
 		$scope.trysetcookie("", "", "", "", "");
-		$scope.refreshFavorites();
 	};
 
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -140,18 +140,24 @@ angular.module('sargo', [])
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
 	function init() {
-		//Leer el json con los datos de los peces con angular.
-		$http.get('data.json').success(function(data) {
-			$scope.json_data = data;
-			addLog("Fichero de datos JSON cargado.");
-			$scope.refreshFavorites();
-		}).
-		error(function(data) {
+	//Leer el json con los datos de los peces con angular si no hay datos en localStorage
+		if (window.localStorage.getItem("areFavs") !== "true") {
+			$http.get('data.json').success(function(data) {
+				$scope.json_data = data;
+				addLog("Fichero de datos JSON cargado.");
+			}).
+			error(function(data) {
 			addLog("No se ha podido cargar el fichero con los datos.");
 			alert("No se ha podido cargar el fichero con los datos.");
-		});	
-		//Comprobar si existe posibilidad de usar LocalStorage
-		if(typeof(Storage) !== "undefined") {
+			});
+		} else {
+			var toJson = window.localStorage.getItem("favs").toString();
+			toJson = toJson.replace("\"$$hashKey\":\"[0-9][0-9][A-Z]\"}","}");
+			$scope.json_data = JSON.parse(toJson);
+			//adLog(typeof $scope.json_data);
+			addLog($scope.json_data.toString());
+		}
+	if(typeof(Storage) !== "undefined") {
 			// Existe LocalStorage y se puede usar
 			$scope.webStorage = true;
 			addLog("Comprobación de localStorage satisfactoria.");
@@ -161,7 +167,7 @@ angular.module('sargo', [])
 			addLog("Comprobación de localStorage fallada. No se usará localStorage.");
 		}
 	}
-
+	
 	$scope.addFavorite = function(id) {
 		//Comprobamos que hay posibilidad de usar LocalStorage, y en caso contrario no hacemos nada
 		if (!$scope.webStorage)	return;
@@ -172,31 +178,6 @@ angular.module('sargo', [])
 		else
 			setActiveFav(id);
 	}
-	
-	$scope.refreshFavorites = function() {
-		var numKeys = window.localStorage.length;
-		var numItems = $scope.json_data.length;
-		var numChanged = 0;
-		var numFavs = 0;
-		addLog("Refrescar favoritos iniciado. Total de llaves en LocalStorage=" + numKeys + ". Total de elementos a revisar=" + numItems + ".");
-		for (var i = 0; i < numItems; i++) {
-			var value = window.localStorage.getItem(i);
-			if (value == null || ((value != "true") && (value != "false"))) {
-				addLog("La llave '" + i + "' con el valor '" + value + "' es errónea.");
-				continue;
-			}
-			else {
-				if (value == "true") {
-					$scope.json_data[i].fav = true;
-					numFavs++;
-				}
-				else
-					$scope.json_data[i].fav = false;
-				numChanged++;
-			}
-		}
-		addLog("Refrescar favoritos Terminado. Total de items con valor=" + numChanged + ". Total de favoritos=" + numFavs + ".");
-	}	
 	
 	function setActiveFav(id) {
 		var number = parseInt(id) - 1;
@@ -224,8 +205,13 @@ angular.module('sargo', [])
 	
 	function setFav(id, value) {
 		$scope.json_data[id].fav = value;
-		window.localStorage.setItem(id,value);
+		var strJson = JSON.stringify($scope.json_data);
+		window.localStorage.setItem("favs",strJson);
+		window.localStorage.setItem("areFavs","true");
+		addLog("variables guardadas en localstorage");
 	}
+	
+
 
 		
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -250,7 +236,7 @@ angular.module('sargo', [])
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		
 	window.addEventListener("DOMContentLoaded", init, false);
-		
+	init();	
 });
 
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
