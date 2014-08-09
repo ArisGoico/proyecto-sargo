@@ -155,9 +155,9 @@ angular.module('sargo', [])
 			toJson = toJson.replace("\"$$hashKey\":\"[0-9][0-9][A-Z]\"}","}");
 			$scope.json_data = JSON.parse(toJson);
 			//adLog(typeof $scope.json_data);
-			addLog($scope.json_data.toString());
+			//addLog($scope.json_data.toString());
 		}
-	if(typeof(Storage) !== "undefined") {
+		if(typeof(Storage) !== "undefined") {
 			// Existe LocalStorage y se puede usar
 			$scope.webStorage = true;
 			addLog("Comprobación de localStorage satisfactoria.");
@@ -172,6 +172,7 @@ angular.module('sargo', [])
 		//Comprobamos que hay posibilidad de usar LocalStorage, y en caso contrario no hacemos nada
 		if (!$scope.webStorage)	return;
 		var fav_icon = document.getElementById(id);
+		addLog("Se lanza un 'addFavorite' en el elemento de id=" + fav_icon.id + " y clase=" + fav_icon.className + ".");
 		//Comprobamos en que estado está el item: favorito ya o no
 		if (fav_icon.className == "true")
 			setInactiveFav(id);
@@ -208,7 +209,7 @@ angular.module('sargo', [])
 		var strJson = JSON.stringify($scope.json_data);
 		window.localStorage.setItem("favs",strJson);
 		window.localStorage.setItem("areFavs","true");
-		addLog("variables guardadas en localstorage");
+		addLog("Variables guardadas en localStorage.");
 	}
 	
 
@@ -235,8 +236,8 @@ angular.module('sargo', [])
 	//--------------------------------------------------------------------INICIALIZACIÓN DEL SCRIPT---------------------------------------------------------------------------
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 		
-	window.addEventListener("DOMContentLoaded", init, false);
 	init();	
+	
 });
 
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
