@@ -19,6 +19,7 @@ angular.module('sargo', [])
 	$scope.type.color = "";
 	$scope.idcookie = "";
 	$scope.type.family = "";
+	$scope.json_data = [];
 
 	
 	//-------------Variables necesarias para el uso de favoritos-------------------
@@ -134,6 +135,23 @@ angular.module('sargo', [])
 		$scope.type = {};
 		$scope.trysetcookie("", "", "", "", "");
 	};
+	
+	// Codigo para los dropdown de familias
+	$scope.arrayContainsFam = function (array, x) {
+			for (var i=0; i<array.length; i++) {
+				if ( x == array[i].familia) {
+					return true;
+				};
+			};
+	};
+	$scope.familyfishDrop = [];
+		$scope.createFamArray = function (typeFamily) {
+			for (var i=1; i<$scope.json_data.length; i++) {
+				if ( !$scope.arrayContainsFam ($scope.familyfishDrop, $scope.json_data[i].familia) && $scope.json_data[i].type == typeFamily) {
+					$scope.familyfishDrop.push ($scope.json_data[i]);
+				};
+			}
+	};
 
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	//--------------------------------------------------------------------FUNCIONES PARA FAVORITOS ---------------------------------------------------------------------------
@@ -141,80 +159,27 @@ angular.module('sargo', [])
 	
 	function init() {
 	//Leer el json con los datos de los peces con angular si no hay datos en localStorage
-		if (window.localStorage.getItem("areFavs") !== "true") {
+		
 			$http.get('data.json').success(function(data) {
 				$scope.json_data = data;
 				addLog("Fichero de datos JSON cargado.");
+				var typeOfDoc = document.getElementById('fish');
+				addLog('La veriable typeOfDoc es' + typeOfDoc + '.');
+				if (typeOfDoc !== null){
+					$scope.createFamArray ('pez');
+					addLog('Hemos llegado a saber que estamos en peces');
+				} else {
+					$scope.createFamArray ('invertebrado');
+					addLog('Hemos llegado a saber que estamos en invertebrados');
+				}
+				$scope.showall ();
 			}).
 			error(function(data) {
 			addLog("No se ha podido cargar el fichero con los datos.");
 			alert("No se ha podido cargar el fichero con los datos.");
 			});
-		} else {
-			var toJson = window.localStorage.getItem("favs").toString();
-			toJson = toJson.replace("\"$$hashKey\":\"[0-9][0-9][A-Z]\"}","}");
-			$scope.json_data = JSON.parse(toJson);
-			//adLog(typeof $scope.json_data);
-			//addLog($scope.json_data.toString());
-		}
-		if(typeof(Storage) !== "undefined") {
-			// Existe LocalStorage y se puede usar
-			$scope.webStorage = true;
-			addLog("Comprobación de localStorage satisfactoria.");
-		} else {
-			// No se puede usar LocalStorage
-			$scope.webStorage = false;
-			addLog("Comprobación de localStorage fallada. No se usará localStorage.");
-		}
-	}
-	
-	$scope.addFavorite = function(id) {
-		//Comprobamos que hay posibilidad de usar LocalStorage, y en caso contrario no hacemos nada
-		if (!$scope.webStorage)	return;
-		var fav_icon = document.getElementById(id);
-		addLog("Se lanza un 'addFavorite' en el elemento de id=" + fav_icon.id + " y clase=" + fav_icon.className + ".");
-		//Comprobamos en que estado está el item: favorito ya o no
-		if (fav_icon.className == "true")
-			setInactiveFav(id);
-		else
-			setActiveFav(id);
-	}
-	
-	function setActiveFav(id) {
-		var number = parseInt(id) - 1;
-		if (!isNaN(number)) {
-			setFav(number, true);
-			addLog("La ficha con id=" + id + " ha sido añadida como favorito.");
-		}
-		else {
-			addLog("La ficha con id=" + id + " no se puede parsear a un numero correcto.");
-			alert("La ficha con id=" + id + " no se puede parsear a un numero correcto.");
-		}	
-	}
-	
-	function setInactiveFav(id) {
-		var number = parseInt(id) - 1;
-		if (!isNaN(number)) {
-			setFav(number, false);
-			addLog("La ficha con id=" + id + " ha sido eliminada como favorito.");
-		}
-		else {
-			addLog("La ficha con id=" + id + " no se puede parsear a un numero correcto.");
-			alert("La ficha con id=" + id + " no se puede parsear a un numero correcto.");
-		}	
-	}
-	
-	function setFav(id, value) {
-		$scope.json_data[id].fav = value;
-		var strJson = JSON.stringify($scope.json_data);
-		window.localStorage.setItem("favs",strJson);
-		window.localStorage.setItem("areFavs","true");
-		addLog("Variables guardadas en localStorage.");
-	}
-	
-
-
-		
+				
+	}	
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	//--------------------------------------------------------------------FUNCIONES AUXILIARES--------------------------------------------------------------------------------
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -231,46 +196,22 @@ angular.module('sargo', [])
 		output = output.toUTCString();
 		return output;
 	}
+	
+	
+
+
 
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	//--------------------------------------------------------------------INICIALIZACIÓN DEL SCRIPT---------------------------------------------------------------------------
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-		
 	init();	
-	
+
+
 });
 
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	//--------------------------------------------------------------------FUNCIONES DE CONTROL DE MAPS------------------------------------------------------------------------
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
-/*function initMap () {
-	//Valores temporales de coordenadas
-	var x=new google.maps.LatLng(52.395715,4.888916);
-	var stavanger=new google.maps.LatLng(58.983991,5.734863);
-	var amsterdam=new google.maps.LatLng(52.395715,4.888916);
-	var london=new google.maps.LatLng(51.508742,-0.120850);
-	
-	if(!map) {
-		mapProp = {
-			center:x,
-			zoom:4,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-		map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-	}
-	
-	var myTrip=[stavanger,amsterdam,london,stavanger];
-	var flightPath=new google.maps.Polygon({
-		path:myTrip,
-		strokeColor:"#0000FF",
-		strokeOpacity:0.8,
-		strokeWeight:2,
-		fillColor:"#0000FF",
-		fillOpacity:0.4
-	});
 
-	flightPath.setMap(map);
-	map.setCenter(x);
-}*/
 
