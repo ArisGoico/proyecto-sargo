@@ -12,17 +12,6 @@
   },
     {
 	"id": "c002",   
-	"mainimage": "img/com/InfralitoralRocoso.jpg",
-	"name" : "Infralitoral rocoso",
-	"description" : "Zona muy compleja con diversas comunidades que se extiende desde el límite más bajo de la marea hasta la desaparición de las fanerógamas marinas y algas fotófilas por falta de luz.",
-	"sustrato" : "Rocoso.",
-	"luminosity" : "Variable descendiendo con la profundidad, en función de la claridad del agua.",	
-	"prof" :  "Desde unos pocos centímetros hasta los 30 o 35 metros en las zonas con el agua más clara.",
-	"species" : "En esta zona se pueden distinguir varias comunidades siendo la más representativa la de las algas fotófilas (“amantes de la luz”) que a su vez puede presentar diversos aspectos según sea la especie dominante que varía en función de las condiciones de cada zona (grado de agitación, iluminación, textura de las rocas, etc.)",
-	"general" : "En este piso, muy prolijo y complejo, caracterizado sobre todo por la gran presencia de multitud de especies de algas habitan una enorme cantidad de seres marinos de todos los grupos, equinodermos, crustáceos, peces, hidrozoos, moluscos..."
-  },
-    {
-	"id": "c003",   
 	"mainimage": "img/com/MedioLitoralRocoso.jpg",
 	"name" : "Mediolitoral rocoso",
 	"description" : "Comunidad que ocupa la zona de alternancia entre inmersión y emersión debido a la variación de las mareas. También conocida como intermareal.",
@@ -31,6 +20,17 @@
 	"prof" :  "Su límite superior es el nivel más alto alcanzado en la marea alta y el inferior el más bajo de la bajamar. En el Mediterráneo, debido a la poca amplitud de las mareas es un piso de poca amplitud.",
 	"species" : "Puede presentar distintos aspectos según las especies de algas dominantes. Cabe destacar la facies del alga calcárea Litophyllum tortuosum que con su color rosáceo puede formar cornisas muy gruesas entre cuyos numerosas oquedades encuentran refugio varias especies de esponjas, quitones, tunicados, cnidarios como el tomate de mar (Actinia equina) o el cangrejo corredor (Pachygrapsus marmoratus).",
 	"general" : "En este alternante piso se puede distinguir dos horizontes, en el superior suelen abundar algas de talo blando acompañadas de especies tan populares como las lapas mientras que en el inferior suelen dominar las algas calcáreas."
+  },
+    {
+	"id": "c003",   
+	"mainimage": "img/com/InfralitoralRocoso.jpg",
+	"name" : "Infralitoral rocoso",
+	"description" : "Zona muy compleja con diversas comunidades que se extiende desde el límite más bajo de la marea hasta la desaparición de las fanerógamas marinas y algas fotófilas por falta de luz.",
+	"sustrato" : "Rocoso.",
+	"luminosity" : "Variable descendiendo con la profundidad, en función de la claridad del agua.",	
+	"prof" :  "Desde unos pocos centímetros hasta los 30 o 35 metros en las zonas con el agua más clara.",
+	"species" : "En esta zona se pueden distinguir varias comunidades siendo la más representativa la de las algas fotófilas (“amantes de la luz”) que a su vez puede presentar diversos aspectos según sea la especie dominante que varía en función de las condiciones de cada zona (grado de agitación, iluminación, textura de las rocas, etc.)",
+	"general" : "En este piso, muy prolijo y complejo, caracterizado sobre todo por la gran presencia de multitud de especies de algas habitan una enorme cantidad de seres marinos de todos los grupos, equinodermos, crustáceos, peces, hidrozoos, moluscos..."
   },
     {
 	"id": "c004",   
