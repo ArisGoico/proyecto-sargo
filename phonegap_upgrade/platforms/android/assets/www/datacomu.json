@@ -23,14 +23,14 @@
   },
     {
 	"id": "c003",   
-	"mainimage": "img/com/InfralitoralRocoso.jpg",
-	"name" : "Infralitoral rocoso",
-	"description" : "Zona muy compleja con diversas comunidades que se extiende desde el límite más bajo de la marea hasta la desaparición de las fanerógamas marinas y algas fotófilas por falta de luz.",
+	"mainimage": "img/com/enclaves.jpg",
+	"name" : "Enclaves esciáfilos del infralitoral",
+	"description" : "Comunidades que viven en lugares resguardados de la luz en la zona infralitoral como cornisas o paredes extraplomadas.",
 	"sustrato" : "Rocoso.",
-	"luminosity" : "Variable descendiendo con la profundidad, en función de la claridad del agua.",	
-	"prof" :  "Desde unos pocos centímetros hasta los 30 o 35 metros en las zonas con el agua más clara.",
-	"species" : "En esta zona se pueden distinguir varias comunidades siendo la más representativa la de las algas fotófilas (“amantes de la luz”) que a su vez puede presentar diversos aspectos según sea la especie dominante que varía en función de las condiciones de cada zona (grado de agitación, iluminación, textura de las rocas, etc.)",
-	"general" : "En este piso, muy prolijo y complejo, caracterizado sobre todo por la gran presencia de multitud de especies de algas habitan una enorme cantidad de seres marinos de todos los grupos, equinodermos, crustáceos, peces, hidrozoos, moluscos..."
+	"luminosity" : "Escaso al estar en lugares resguardados de la luz directa.",	
+	"prof" :  "Indistintamente en todo el rango de profundidad de la zona infralitoral.",
+	"species" : "Fundamentalmente algas esciáfilas como Halimeda tuna o  Udotea petiolata y gran variedad de fauna del tipo incrustante o tapizante como esponjas, ascídeas, cnidarios entre los que suele abundar el Parazoanthus axinellae e incluso corales blandos y otras especies propias de mayores profundidades donde la luz es mucho menos intensa.",
+	"general" : "Un caso particular de “enclave” es el que constituyen las partes inferiores de piedras y pequeños bloques de derrubio que, en su cara superior expuesta a  la luz, presentan la facies de algas fotófilas que impere en la zona mientras que en su cara inferior dan refugio a multitud de seres que huyen de la luz, entre otros a ejemplares jóvenes de erizos y estrellas, ofiuras, chafarrocas, etc."
   },
     {
 	"id": "c004",   
@@ -66,15 +66,15 @@
 	"general" : "La comunidad “climax” de este piso, formada realmente por las algas calcáreas concrecionantes es el llamado coralígeno aludiendo a la presencia del coral rojo, si bien esta especie, hoy muy escasa, es más propia de cuevas semioscuras."
   },
     {
-	"id": "c007",   
-	"mainimage": "img/com/enclaves.jpg",
-	"name" : "Enclaves esciáfilos del infralitoral",
-	"description" : "Comunidades que viven en lugares resguardados de la luz en la zona infralitoral como cornisas o paredes extraplomadas.",
+	"id": "c007",  
+	"mainimage": "img/com/InfralitoralRocoso.jpg",
+	"name" : "Infralitoral rocoso",
+	"description" : "Zona muy compleja con diversas comunidades que se extiende desde el límite más bajo de la marea hasta la desaparición de las fanerógamas marinas y algas fotófilas por falta de luz.",
 	"sustrato" : "Rocoso.",
-	"luminosity" : "Escaso al estar en lugares resguardados de la luz directa.",	
-	"prof" :  "Indistintamente en todo el rango de profundidad de la zona infralitoral.",
-	"species" : "Fundamentalmente algas esciáfilas como Halimeda tuna o  Udotea petiolata y gran variedad de fauna del tipo incrustante o tapizante como esponjas, ascídeas, cnidarios entre los que suele abundar el Parazoanthus axinellae e incluso corales blandos y otras especies propias de mayores profundidades donde la luz es mucho menos intensa.",
-	"general" : "Un caso particular de “enclave” es el que constituyen las partes inferiores de piedras y pequeños bloques de derrubio que, en su cara superior expuesta a  la luz, presentan la facies de algas fotófilas que impere en la zona mientras que en su cara inferior dan refugio a multitud de seres que huyen de la luz, entre otros a ejemplares jóvenes de erizos y estrellas, ofiuras, chafarrocas, etc."
+	"luminosity" : "Variable descendiendo con la profundidad, en función de la claridad del agua.",	
+	"prof" :  "Desde unos pocos centímetros hasta los 30 o 35 metros en las zonas con el agua más clara.",
+	"species" : "En esta zona se pueden distinguir varias comunidades siendo la más representativa la de las algas fotófilas (“amantes de la luz”) que a su vez puede presentar diversos aspectos según sea la especie dominante que varía en función de las condiciones de cada zona (grado de agitación, iluminación, textura de las rocas, etc.)",
+	"general" : "En este piso, muy prolijo y complejo, caracterizado sobre todo por la gran presencia de multitud de especies de algas habitan una enorme cantidad de seres marinos de todos los grupos, equinodermos, crustáceos, peces, hidrozoos, moluscos..."	
   },
     {
 	"id": "c008",   
