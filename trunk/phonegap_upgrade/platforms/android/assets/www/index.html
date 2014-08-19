@@ -8,7 +8,7 @@
 	
 	<!--CSS responsiva -->
 		<!--Móviles 1280x720-->
-<link rel="stylesheet" type="text/css" media="screen and (min-device-width:300px) and (max-device-width:1280px)" href="css/mobile_720apk.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (min-device-width:300px) and (max-device-width:1280px)" href="css/mobile_720apk.css" />
 		<!--Tablets 1280X800
 		<link rel="stylesheet" type="text/css" media="screen and (device-width:800px)" href="css/tablet_800.css" />
 		<link rel="stylesheet" type="text/css" media="screen and (device-width:1280px)" href="css/tablet_800.css" />-->
@@ -24,10 +24,11 @@
 		// Wait for device API libraries to load
 		function onLoad() {
 			document.addEventListener("deviceready", onDeviceReady, false);
+			alert("Event listener set");
 		}
 		// device APIs are available
 		function onDeviceReady() {
-			navigator.splashscreen.hide();
+			navigator.splashscreen.hide()
 			alert("Splash hidden");
 		}
     </script>
