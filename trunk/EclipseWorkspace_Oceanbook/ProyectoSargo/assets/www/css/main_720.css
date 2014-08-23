@@ -1,0 +1,37 @@
+
+body {
+    font-size: 18px;
+}
+.containerindex {
+	width: 720px;
+}
+
+.containercard {
+    width: 720px;
+}
+
+.main_image {
+    width: 400px;
+    margin-top: 50px;
+}
+
+.common_name {
+    font-size: 30px;
+}
+.map {
+    width: 250px;
+	height: 300px;
+    margin: 40px 20px 40px 20px;
+    padding: 0px 20px 20px 20px;
+}
+.shortdesc {
+    width: 250px;
+	height: 280px;
+    margin: 40px 20px 40px 70px;
+}
+
+.main_text {
+    width: 610px;
+    margin: 40px 50px;
+    padding: 0px 20px 20px 20px;
+}

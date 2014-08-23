@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="sargo">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<meta name="viewport"
+      content="
+          initial-scale = 1.0 ,
+          minimum-scale =1.0 ,
+          maximum-scale = 1.0 ,
+          user-scalable = no"
+          />
+
+	<!-- CSS comun a todas las pantallas-->
+	<link rel="stylesheet" type="text/css" href="css/index_list.css" />
+	
+	<!--CSS responsiva -->
+		<!--Global para PC-->
+		<link rel="stylesheet" type="text/css" media="screen and (min-width:1300px)" href="css/main_1000.css" /> 
+		<link rel="stylesheet" type="text/css" media="screen and (min-width:721px)" href="css/mobile_720apk.css" /> 
+		<!--Móviles 1280x720
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:360px)" href="css/mobile_720.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:640px)" href="css/mobile_720.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:1280px)" href="css/mobile_720apk.css" />		
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:720px)" href="css/mobile_720apk.css" />
+		<link rel="stylesheet" type="text/css" media="screen and " href="css/mobile_720apk.css" />	
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:320px)" href="css/mobile_720apk.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:508px)" href="css/mobile_720apk.css" />	-->
+		<link rel="stylesheet" type="text/css" media="screen and (min-device-width:300px) and (max-device-width:1280px)" href="css/mobile_720apk.css" />
+		
+		
+		<!--Tablets 1280X800-->
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:800px)" href="css/tablet_800.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:1280px)" href="css/tablet_800.css" />
+		
+
+
+	<!--Javascript-->
+	<script src="js/lib/angular.js"></script>
+	<script src="controller.js"></script>
+	<!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA6cJnxpv05XnN8mETINyBDcZJbEWXSzks&sensor=true"></script>
+	<!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
+
+
+	
+	
+</head>
+
+<body ng-controller="global" >
+
+	<div  class="containercard" >
+			<!--<nav><button ng-click="pruebacookie()" class="backbutton"><img src="img/back.png" class="backimg"> <div class="backtext">Índice</div></button></nav>-->
+		<div ng-repeat="name in json_data | filter:idcookie">
+			<div  class="img_name">
+				<img ng-click="imgGalleryswitch_on()" src="{{name.mainimage}}" class="main_image"></img>
+				
+			
+				<div class="common_name" >
+					{{name.commonname}}
+				</div>
+				<div class="scientific_name">
+					<I>{{name.scientificname}}</I>
+				</div>				
+			</div>
+			<!--Imagen a pantalla completa-->
+			<div ng-click="imgGalleryswitch_off()" ng-repeat="name in json_data | filter:idcookie" class="{{imgGallery}}"  > 
+				<button ng-click="imgGalleryswitch_off()" class="closebutton"><img src="img/close.png"> </button>
+				<span class="helper"></span><img src="{{name.mainimage}}" class="imgGallery">
+			</div>
+			<!--Fin de la imagen a pantalla completa-->
+
+			
+			<article class="shortdesc" >
+				<div class="shortdesc_item" ng-repeat="name in json_data | filter:idcookie">
+					<div class="shortdesc_title">Coloración:&nbsp;</div>	{{name.color}} <br>
+					<div class="shortdesc_title">Morfología:&nbsp;</div>	{{name.form}} <br>
+					<div class="shortdesc_title">Modo de vida:&nbsp;</div>	{{name.wayoflife}} <br>
+					<div class="shortdesc_title">Habitad:&nbsp;</div>	{{name.habitat}} <br>
+					<div class="shortdesc_title">Alimentación:&nbsp;</div>	{{name.feeding}} <br>
+				</div>
+			</article>
+					
+			<article class="main_text" >
+				<div class="description" ng-repeat="name in json_data | filter:idcookie">
+					<h1>Descripción</h1>
+					<div class="main_text_body">{{name.description}}</div>
+					<br>
+
+					<h1>Biología</h1>
+					<div class="main_text_body">{{name.biology}}</div>
+					<br>
+					
+					<h1>Curiosidades</h1>
+					<div class="main_text_body">{{name.curiosidades}}</div>
+				</div>
+				<!-- Test de DB -->
+				<ul id="testElement"></ul>
+				<!-- Fin test de DB -->
+			</article>
+		</div>			
+	</div>
+			
+		
+
+		<footer>
+			<div style="height:150px;"></div>
+		</footer>
+<!-- FIN DEL CONTAINER-->
+</body>
