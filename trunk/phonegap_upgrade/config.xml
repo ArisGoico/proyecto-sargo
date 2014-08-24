@@ -10,5 +10,6 @@
     <content src="index.html" />
     <access origin="*" />
     <preference name="SplashScreen" value="screen" />
-	<preference name="SplashScreenDelay" value="10000" />
+	<preference name="SplashScreenDelay" value="5000" />
+	<plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
 </widget>
