@@ -1,8 +1,0 @@
-INDEX VERSION 1.126+C:\Desarrollo\SVN_Oceanbook\EclipseWorkspace_Oceanbook\.metadata\.plugins\org.eclipse.jdt.core
-2819294229.index
-3329052665.index
-557249839.index
-848856923.index
-2799439778.index
-4036462442.index
-1183017564.index
