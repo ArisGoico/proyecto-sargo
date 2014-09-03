@@ -1,0 +1,6 @@
+# view AndroidManifest.xml #generated:14
+-keep class com.google.android.gms.ads.AdActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:8
+-keep class es.inpulse.oceanbook.ProyectoSargo { <init>(...); }
+
