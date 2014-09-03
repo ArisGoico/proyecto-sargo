@@ -31,7 +31,7 @@ import org.apache.cordova.*;
 
 public class ProyectoSargo extends CordovaActivity 
 {
-	private static final String AdMob_Ad_Unit = "ca-app-pub-1002564116074691/6872022360";
+	private static final String AdMob_Ad_Unit = "ca-app-pub-1002564116074691/2463877566";
     private Handler mHandler = new Handler();
     private AdView adView;
     
@@ -68,14 +68,14 @@ public class ProyectoSargo extends CordovaActivity
         // Iniciar una solicitud genérica.
         AdRequest adRequest = new AdRequest.Builder()
         	.addTestDevice(AdRequest.DEVICE_ID_EMULATOR)       // Emulator
-        	.addTestDevice("2DF4498BBEEB17F93CE2857BDC6489A2") // Samsung Galaxy S3 de Aris
+        	//.addTestDevice("2DF4498BBEEB17F93CE2857BDC6489A2") // Samsung Galaxy S3 de Aris
         	.build();
         
         // Cargar adView con la solicitud de anuncio.
         adView.loadAd(adRequest);
                           
     }
-    /*
+    
     @Override
     public void onPause() {
       adView.pause();
@@ -93,6 +93,6 @@ public class ProyectoSargo extends CordovaActivity
       adView.destroy();
       super.onDestroy();
     }
-    */
+    
 }
 
