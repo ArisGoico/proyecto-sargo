@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="es.inpulse.oceanbook" version="0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>OceanBook</name>
+    <name>Oceanbook</name>
     <description>
         An app about fishes and sea life!
     </description>
@@ -10,6 +10,6 @@
     <content src="index.html" />
     <access origin="*" />
     <preference name="SplashScreen" value="screen" />
-	<preference name="SplashScreenDelay" value="5000" />
+	<preference name="SplashScreenDelay" value="15000" />
 	<plugin name="SplashScreen" value="org.apache.cordova.SplashScreen"/>
 </widget>
