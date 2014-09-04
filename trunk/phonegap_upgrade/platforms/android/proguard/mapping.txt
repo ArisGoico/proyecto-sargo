@@ -8032,9 +8032,6 @@ es.inpulse.oceanbook.ProyectoSargo -> es.inpulse.oceanbook.ProyectoSargo:
     com.google.android.gms.ads.AdView adView -> n
     void onCreate(android.os.Bundle) -> onCreate
     void doAdMob() -> i
-    void onPause() -> onPause
-    void onResume() -> onResume
-    void onDestroy() -> onDestroy
     void access$0(es.inpulse.oceanbook.ProyectoSargo) -> a
 es.inpulse.oceanbook.ProyectoSargo$1 -> es.inpulse.oceanbook.a:
     es.inpulse.oceanbook.ProyectoSargo this$0 -> a

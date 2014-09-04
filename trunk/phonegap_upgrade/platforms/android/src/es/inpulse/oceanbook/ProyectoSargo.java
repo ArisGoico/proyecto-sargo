@@ -75,7 +75,7 @@ public class ProyectoSargo extends CordovaActivity
         adView.loadAd(adRequest);
                           
     }
-    
+    /*
     @Override
     public void onPause() {
       adView.pause();
@@ -93,6 +93,7 @@ public class ProyectoSargo extends CordovaActivity
       adView.destroy();
       super.onDestroy();
     }
+    */
     
 }
 
