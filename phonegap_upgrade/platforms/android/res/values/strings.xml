@@ -1,4 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="app_name">OceanBook</string>
+    <string name="close_alert_message">¿Quiere salir de la aplicación?</string>
+    <string name="close_alert_title">Cerrar OceanBook</string>
+    <string name="close_alert_button_ok">Salir</string>
+    <string name="close_alert_button_cancel">Cancelar</string>
 </resources>

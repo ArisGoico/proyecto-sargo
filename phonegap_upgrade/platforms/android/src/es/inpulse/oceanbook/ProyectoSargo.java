@@ -95,5 +95,33 @@ public class ProyectoSargo extends CordovaActivity
     }
     */
     
+    /* LANZAR UN DIALOG PARA SALIR DE LA APP
+    @Override
+    public void onBackPressed() {
+    	AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+    	builder.setMessage(R.string.close_alert_message)
+    	       .setTitle(R.string.close_alert_title);
+
+    	builder.setPositiveButton(R.string.close_alert_button_ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User clicked OK button, the "finish()" function is triggered
+            	exitAplication();
+            }
+        });
+    	builder.setNegativeButton(R.string.close_alert_button_cancel, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                // User cancelled the dialog, nothing happens
+            }
+        });
+ 
+    	@SuppressWarnings("unused")
+		AlertDialog dialog = builder.create();
+    }
+    
+    private void exitAplication() {
+    	finish();
+    }
+    */
 }
 

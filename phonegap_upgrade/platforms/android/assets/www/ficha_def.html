@@ -36,7 +36,7 @@
 
 	<!--Javascript-->
 	<script src="js/lib/angular.js"></script>
-	<script src="controller.js"></script>
+	<script src="controller_ficha.js"></script>
 	<!--<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA6cJnxpv05XnN8mETINyBDcZJbEWXSzks&sensor=true"></script>
 	<!--<script type="text/javascript" charset="utf-8" src="cordova.js"></script>-->
 
@@ -48,7 +48,7 @@
 <body ng-controller="global" >
 
 	<div  class="containercard" >
-			<!--<nav><button ng-click="pruebacookie()" class="backbutton"><img src="img/back.png" class="backimg"> <div class="backtext">Índice</div></button></nav>-->
+			<nav><a  class="backbutton" onClick="history.go(-1);return true;"><img src="img/back.png" /></a></nav>
 		<div ng-repeat="name in json_data | filter:idcookie">
 			<div  class="img_name">
 				<img ng-click="imgGalleryswitch_on()" src="{{name.mainimage}}" class="main_image"></img>
@@ -102,7 +102,7 @@
 		
 
 		<footer>
-			<div style="height:150px;"></div>
+			<div style="height:50px;"></div>
 		</footer>
 <!-- FIN DEL CONTAINER-->
 </body>

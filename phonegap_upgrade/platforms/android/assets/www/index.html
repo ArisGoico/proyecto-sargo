@@ -13,13 +13,23 @@
 		<link rel="stylesheet" type="text/css" media="screen and (device-width:800px)" href="css/tablet_800.css" />
 		<link rel="stylesheet" type="text/css" media="screen and (device-width:1280px)" href="css/tablet_800.css" />-->
 		
-
 	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-	<!--Javascript
-	<script src="js/lib/angular.js"></script>
-  	<script src="data/data.js"></script>
-	<script src="js/controller.js"></script>
-	<script> google.maps.event.addDomListener(window, 'load', initialize); </script>-->
+	<script type="text/javascript" charset="utf-8">
+		function onDeviceReady(){
+			document.addEventListener("backbutton", function(e){
+				   e.preventDefault();
+				   navigator.app.exitApp();
+				   //window.location.assign("index.html")
+			}, false);
+		}
+		
+		document.addEventListener("deviceready", onDeviceReady, false);
+	</script>
+}
+
+	
+	
+<!--Javascript	
 	<script type="text/javascript" charset="utf-8">
 		// Wait for device API libraries to load
 		function onLoad() {
@@ -31,7 +41,7 @@
 			//navigator.splashscreen.hide()
 			//alert("Splash hidden");
 		}
-    </script>
+    </script>-->
 	
 	
 </head>
@@ -61,12 +71,21 @@
 					</div>
 				</div>
 			</a>
-			<a href="comunidades.html">
+			<a href="html/comunidades/comunidades.html">
 				<div class="beco">
 					<div class="beco_img"> 
 						<img class="img_button" src="img/img_eco.jpg">
 					</div>
 					<div class="btitulo">Comunidades
+					</div>
+				</div>
+			</a>
+
+			<a href="html/centros/index_centros.html" style="display:none;">
+				<div class="bcen">
+					<div class="bindex_img"> 
+						<img class="img_button" src="img/img_cen.jpg"></div>
+					<div class="btitulo">Centros de buceo
 					</div>
 				</div>
 			</a>

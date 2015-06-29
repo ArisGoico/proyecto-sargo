@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="sargo">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<meta name="viewport"
+      content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- CSS comun a todas las pantallas-->
+	<link rel="stylesheet" type="text/css" href="../../css/favs.css" />
+	
+	<!--CSS responsiva -->
+		<!--Global para PC-->
+		<link rel="stylesheet" type="text/css" media="screen and (min-width:1300px)" href="../../css/main_1000.css" /> 
+		<link rel="stylesheet" type="text/css" media="screen and (min-width:721px)" href="../../css/mobile_720apk.css" /> 
+		<link rel="stylesheet" type="text/css" media="screen and (min-device-width:300px) and (max-device-width:1280px)" href="../../css/mobile_720apk.css" />
+		
+		
+		<!--Tablets 1280X800-->
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:800px)" href="../../css/tablet_800.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:1280px)" href="../../css/tablet_800.css" />
+		
+
+
+	<!--Javascript-->
+	<script src="../../js/lib/angular.js"></script>
+	<script src="controller_com.js"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+		function onDeviceReady(){
+			document.addEventListener("backbutton", function(e){
+				   e.preventDefault();
+				   //navigator.app.exitApp();
+				   window.location.assign("index.html")
+			}, false);
+		}
+		
+		document.addEventListener("deviceready", onDeviceReady, false);
+	</script>
+	
+</head>
+<body ng-controller="global">
+	<div  class="{{contindshow}}">
+		<header>
+			<nav class="top_menu" >
+				<a href="../../index.html" class="topbutton">Volver</a>
+				<div class="search" ng-click="showsearch()"> <span class="helper"></span> <img  class ="imglupa" src="../../img/lupa.png"></div>
+				<div class="{{advanced_search}}">
+					<button class="close_search"  ng-click="hideadsearch()"> X </button>
+					<input  class="input_search"  ng-model="type.filter_top" placeholder="Palabra clave...">
+					
+					
+				</div>
+			</nav>
+		</header>
+		
+			<!---<div class="scroll" style="padding-top: 45px;">
+				<div  ng-repeat="name in json_com">
+					<a href="ficha_com.html" ng-click="trysetcookie(name.id, type.filter_top, type.color, type.form, type.family )">
+						<div class="tile">
+							
+							<img src="{{name.mainimage}}" class="tileImg"></img>
+							<div class="btitulo favs">{{name.name}}</div>
+						</div>
+					</a>							
+					
+				</div>
+			
+			</div>-->
+			<div  class="scroll" style="padding-top: 50px;">
+				<div  ng-repeat="name in json_com" >
+					<a href="ficha_com.html" ng-click="trysetcookie(name.id, type.filter_top, type.color, type.form, type.family )">
+						<div  >
+							<div id="{{name.id}}" class="index_cont item" >
+								<img src="{{name.mainimage}}" class="mini_img nonDraggableImage" >
+								<div class="names">
+									<div class="commonnamei" id="id_input">{{name.name}}</div>
+								</div>
+								
+							</div>
+						</div>
+					</a>
+					<div class="line"><hr/></div>
+				</div>
+				<p ng-show="(json_data | filter:type.filter_top | filter:{type: 'pez'} | filter:{color: type.color} | filter:{familia: type.family.familia} | filter:{wayoflife: type_wayoflife} | filter: {form:type_form}).length == 0">No hay resultados para esta búsqueda.</p>
+			</div>
+		</div>
+
+		<footer>
+			<div style="height:10px;"></div>
+		</footer> 
+</body>

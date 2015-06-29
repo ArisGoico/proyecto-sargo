@@ -1,0 +1,20 @@
+/* ------------------------------------------------------------------------------------------------------------------ */
+/* ---------------------------------------------- CSS CENTROS BUCEO ------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+/* La id "google-map-data" contiene dentro los datos que va a usar el mapa. Es invisible */
+#google-map-data {
+	display: none;
+}
+
+/* La clase "google-map" envuelve al elemento div que contiene la id "google-map-canvas" */
+.google-map {
+	width: 80%;
+	height: 500px;
+}
+
+/* La id "google-map-canvas" se pone en el div que contiene la funcionalidad del mapa */
+#google-map-canvas {
+	height: 500px;
+	width: 80%;
+}

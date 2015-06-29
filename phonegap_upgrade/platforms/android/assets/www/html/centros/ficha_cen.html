@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="sargo">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
+	<meta name="viewport"
+      content="
+          initial-scale = 1.0 ,
+          minimum-scale =1.0 ,
+          maximum-scale = 1.0 ,
+          user-scalable = no"
+          />
+
+	<!--CSS responsiva -->
+		<!-- CSS comun a todas las pantallas-->
+		<link rel="stylesheet" type="text/css" href="../../css/index_list.css" />
+		<!--Global para PC-->
+		<link rel="stylesheet" type="text/css" media="screen and (min-width:1300px)" href="../../css/main_1000.css" /> 
+		<link rel="stylesheet" type="text/css" media="screen and (min-width:721px)" href="../../css/mobile_720apk.css" /> 
+		<!--Móviles 1280x720
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:360px)" href="../../css/mobile_720.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:640px)" href="../../css/mobile_720.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:1280px)" href="../../css/mobile_720apk.css" />		
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:720px)" href="../../css/mobile_720apk.css" />
+		<link rel="stylesheet" type="text/css" media="screen and " href="../../css/mobile_720apk.css" />	
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:320px)" href="../../css/mobile_720apk.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:508px)" href="../../css/mobile_720apk.css" />	-->
+		<link rel="stylesheet" type="text/css" media="screen and (min-device-width:300px) and (max-device-width:1280px)" href="../../css/mobile_720apk.css" />
+		
+		
+		<!--Tablets 1280X800-->
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:800px)" href="../../css/tablet_800.css" />
+		<link rel="stylesheet" type="text/css" media="screen and (device-width:1280px)" href="../../css/tablet_800.css" />
+		
+	
+	<!-- CSS específico para las pantallas de centros-->
+	<link rel="stylesheet" type="text/css" href="../../css/centros.css" />
+
+
+	<!--Javascript-->
+	<script src="../../js/lib/angular.js"></script>
+	<script src="controller_centros.js"></script>
+	
+	<!-- Google maps -->
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyA6ClW8OSDKNZwGHJ1FmvWWhcHA7J5lkvU&sensor=false"></script>
+	<script>
+	
+		var map;
+		
+		function initialize() {
+		
+			//Obtener el elemento donde vamos a meter el mapa de Google
+			var mapCanvas = document.getElementById('google-map-canvas');
+			
+			//Poner unas coordenadas estándar de momento			
+			var standarCoords = new google.maps.LatLng(37.9618688,17.1959813);
+			
+			//Opciones estándar del mapa (zoom muy alejado y vista del Mediterráneo)
+			var mapOptions = {
+				zoom: 5,
+				center: standarCoords
+			}
+			
+			map = new google.maps.Map(mapCanvas, mapOptions);
+		}
+		
+		function getPosition() {
+			//Obtener el elemento de donde vamos a sacar los datos del JSON y los datos
+			var mapData = document.getElementById('google-map-data');			
+			var coords = mapData.getAttribute('data-coords');
+			var centerName = mapData.getAttribute('data-name');
+			
+			//Convertimos las coordenadas 
+			var coordsArray = coords.split(",");
+			var pos = new google.maps.LatLng(coordsArray[0], coordsArray[1]);
+			
+			//Crear un nuevo marcador
+			var marker = new google.maps.Marker({
+			  position: pos,
+			  title: centerName,
+			  visible: true
+			})
+			//Aplicar el marcador al mapa
+			marker.setMap(map);
+			
+			//Redimensionar el mapa y centrarlo
+			google.maps.event.trigger(map, "resize");
+			map.setCenter(pos);
+		}
+
+		google.maps.event.addDomListener(window, 'load', initialize);
+		setTimeout(getPosition, 3000);
+	</script>
+	
+	
+</head>
+
+<body ng-controller="global" >
+
+		<nav><button ng-click="pruebacookie()" class="backbutton"><img src="img/back.png" class="backimg"> <div class="backtext">Índice</div></button></nav>
+
+		
+		
+		
+			<!------------------------------------------------------------------------------------------------>
+			<!---------------------------- AQUI IRIA TODO EL HTML DE LA FICHA -------------------------------->
+			<!------------------------------------------------------------------------------------------------>
+			<div  class="containercard" >
+				<div ng-repeat="name in json_com | filter:idcookie">
+					<div  class="img_name">
+						<img ng-click="imgGalleryswitch_on()" src="{{name.mainimage}}" class="main_image"></img>
+						
+					
+						<div class="common_name" >
+							{{name.name}}
+						</div>
+										
+					</div>
+					<!--Imagen a pantalla completa-->
+					<div ng-click="imgGalleryswitch_off()" ng-repeat="name in json_com | filter:idcookie" class="{{imgGallery}}"  > 
+						<button ng-click="imgGalleryswitch_off()" class="closebutton"><img src="img/close.png"> </button>
+						<span class="helper"></span><img src="{{name.mainimage}}" class="imgGallery">
+					</div>
+					<!--Fin de la imagen a pantalla completa-->
+
+					
+					<article class="shortdesc" >
+						<div class="shortdesc_item" ng-repeat="name in json_com | filter:idcookie">
+							<div class="shortdesc_title">Nombre:&nbsp;</div>	{{name.name}} <br>
+							<div class="shortdesc_title">Dirección:&nbsp;</div>	{{name.address}} <br>
+							<div class="shortdesc_title">Teléfono:&nbsp;</div>	{{name.phone}} <br>
+							<div class="shortdesc_title">Correo electrónico:&nbsp;</div>	{{name.mail}} <br>
+							<div class="shortdesc_title">Web:&nbsp;</div>	{{name.web}} <br>
+						</div>
+					</article>
+							
+					<article class="main_text" >
+						<div class="description" ng-repeat="name in json_com | filter:idcookie">
+							<h1>Descripción</h1>
+							<div class="main_text_body">{{name.description}}</div>
+						</div>
+						<!-- Test de DB -->
+						<ul id="testElement"></ul>
+						<!-- Fin test de DB -->
+					</article>
+					<!----------------------------------- MAPA CON LAS COORDENADAS ----------------------------------->
+			<div id="google-map-data" data-coords="{{name.coordinates}}" data-name="{{name.name}}"></div>
+		</div>	
+
+			
+	</div>	
+			
+			
+			
+			
+			
+			
+				
+
+			
+		<!------------------------------------------------------------------------------------------------>
+		<!----------------------------------- MAPA CON LAS COORDENADAS ----------------------------------->
+		<article class="google-map" >
+			<div id="google-map-canvas"></div>
+		</article>
+		<!----------------------------------- FIN DEL MAPA DE COORDENADAS -------------------------------->
+		<!------------------------------------------------------------------------------------------------>
+
+		<footer>
+			<div style="height:150px;"></div>
+		</footer>
+</body>

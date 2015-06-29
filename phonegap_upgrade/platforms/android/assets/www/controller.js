@@ -1,9 +1,18 @@
+document.addEventListener("backbutton", onBackKeyDown, false);
+
+function onBackKeyDown() {
+    window.location.href = 'index.html';
+}
+
 angular.module('sargo', [])
-	.controller('global', function ($scope, $http){	
-		
+.run(['$anchorScroll', function($anchorScroll) {
+      $anchorScroll.yOffset = 80;   
+    }])
+	.controller('global', function ($scope, $http, $location, $anchorScroll){	
+	
 		
   //inicialización de variables
-
+	
 	$scope.advanced_search = "advanced_search_hid"
 	$scope.id = "";
 	$scope.idcookie = "0050";
@@ -21,7 +30,6 @@ angular.module('sargo', [])
 	$scope.type.family = "";
 	$scope.json_data = [];
 
-	
 	//-------------Variables necesarias para el uso de favoritos-------------------
 	$scope.favArray = [];
 	$scope.webStorage = true;
@@ -44,6 +52,7 @@ angular.module('sargo', [])
 	//Métodos
 	$scope.trysetcookie = function (x, filtro, color, forma, familia) {
 		var id = x;
+		
 		setCookie("currentfish", x);
 		setCookie("filtro", filtro);
 		setCookie("color", color);
@@ -54,6 +63,12 @@ angular.module('sargo', [])
 	$scope.trygetcookie = function () {
 		var prueba = getCookie("currentfish");
 		alert (prueba);
+	}
+	//funcion para ir a un item concreto del índice.
+
+	$scope.scrollTo = function(id) {
+      $location.hash(id);
+      $anchorScroll();
 	}
 	
 	// Recupera desde cookies el ID del animal seleccionado (ficha) y recupera de cookies los filtros hechos por el ususario.
@@ -152,6 +167,7 @@ angular.module('sargo', [])
 				};
 			}
 	};
+	
 
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	//--------------------------------------------------------------------FUNCIONES PARA FAVORITOS ---------------------------------------------------------------------------
@@ -172,13 +188,16 @@ angular.module('sargo', [])
 					$scope.createFamArray ('invertebrado');
 					addLog('Hemos llegado a saber que estamos en invertebrados');
 				}
-				$scope.showall ();
+				var s = getCookie("currentfish");
+				$scope.scrollTo(s);
+				addLog(s);
 			}).
 			error(function(data) {
 			addLog("No se ha podido cargar el fichero con los datos.");
 			alert("No se ha podido cargar el fichero con los datos.");
 			});
-				
+			
+			
 	}	
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	//--------------------------------------------------------------------FUNCIONES AUXILIARES--------------------------------------------------------------------------------
@@ -205,13 +224,7 @@ angular.module('sargo', [])
 	//--------------------------------------------------------------------INICIALIZACIÓN DEL SCRIPT---------------------------------------------------------------------------
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	init();	
-
-
-});
-
-	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	//--------------------------------------------------------------------FUNCIONES DE CONTROL DE MAPS------------------------------------------------------------------------
-	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	
 
+});
 

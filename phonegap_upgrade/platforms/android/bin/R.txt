@@ -117,6 +117,10 @@ int string auth_client_needs_update_title 0x7f040003
 int string auth_client_play_services_err_notification_msg 0x7f040004
 int string auth_client_requested_by_msg 0x7f040005
 int string auth_client_using_bad_version_title 0x7f040000
+int string close_alert_button_cancel 0x7f040024
+int string close_alert_button_ok 0x7f040023
+int string close_alert_message 0x7f040021
+int string close_alert_title 0x7f040022
 int string common_google_play_services_enable_button 0x7f040011
 int string common_google_play_services_enable_text 0x7f040010
 int string common_google_play_services_enable_title 0x7f04000f

@@ -694,6 +694,10 @@ es.inpulse.oceanbook.R$string: int auth_client_needs_update_title
 es.inpulse.oceanbook.R$string: int auth_client_play_services_err_notification_msg
 es.inpulse.oceanbook.R$string: int auth_client_requested_by_msg
 es.inpulse.oceanbook.R$string: int auth_client_using_bad_version_title
+es.inpulse.oceanbook.R$string: int close_alert_button_cancel
+es.inpulse.oceanbook.R$string: int close_alert_button_ok
+es.inpulse.oceanbook.R$string: int close_alert_message
+es.inpulse.oceanbook.R$string: int close_alert_title
 es.inpulse.oceanbook.R$string: int common_google_play_services_enable_button
 es.inpulse.oceanbook.R$string: int common_google_play_services_enable_text
 es.inpulse.oceanbook.R$string: int common_google_play_services_enable_title

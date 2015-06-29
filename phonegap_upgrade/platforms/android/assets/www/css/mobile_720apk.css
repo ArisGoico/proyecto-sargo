@@ -111,10 +111,10 @@ body {
 	width: 90%;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	padding: 50px 5px 0px 3px;
+	padding: 10px 5px 0px 3px;
 
 }
-#item {
+.item {
 	width: 100%;
 	font-size: 16px;
 }
@@ -168,7 +168,7 @@ body {
 }
 .shortdesc {
     width: 90%;
-    margin: 20px;
+    margin: 20px 20px 0px 20px;
 	font-size: 16px;
 }
 .map {
